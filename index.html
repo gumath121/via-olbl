@@ -266,201 +266,46 @@
       font-size: 24px;
     }
 
-    /* HERO */
-
+    /* BANNER PRINCIPAL VIAÇÃO LBL */
     .hero {
       position: relative;
-      min-height: 640px;
-      display: flex;
-      align-items: center;
-      isolation: isolate;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 80% 35%, rgba(198, 40, 54, .18), transparent 42%),
-        linear-gradient(125deg, #000000 0%, #0A0A0A 65%, #171717 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: .25;
-      background-image:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to right, black, transparent);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -150px;
-      top: 50%;
-      width: 560px;
-      height: 560px;
-      transform: translateY(-50%);
-      border: 1px solid rgba(192,192,192,.12);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 50px rgba(192,192,192,.025),
-        0 0 0 100px rgba(192,192,192,.02);
-      z-index: -1;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: 50px;
-      padding-top: 75px;
-      padding-bottom: 75px;
-    }
-
-    .hero-copy {
-      max-width: 690px;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      margin-bottom: 25px;
-      border: 1px solid #424242;
-      border-radius: 5px;
-      color: var(--silver);
-      background: rgba(255,255,255,.03);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .hero-tag::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 12px rgba(198,40,54,.8);
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 5vw, 61px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      font-weight: 900;
-      margin-bottom: 23px;
-    }
-
-    .hero h1 span {
-      color: var(--red);
-    }
-
-    .hero-copy > p {
-      color: #C3C3C3;
-      font-size: 15px;
-      max-width: 580px;
-      margin-bottom: 30px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-bottom: 34px;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .hero-point {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #D8D8D8;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .hero-point span {
-      color: var(--red);
-      font-size: 17px;
-    }
-
-    .hero-visual {
-      min-height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .hero-logo-frame {
-      width: min(100%, 400px);
-      aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(192,192,192,.25);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(198,40,54,.12), rgba(0,0,0,.1) 68%);
-      box-shadow: 0 0 90px rgba(198,40,54,.08);
-      position: relative;
-    }
-
-    .hero-logo-frame::before,
-    .hero-logo-frame::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(192,192,192,.15);
-      border-radius: 50%;
-    }
-
-    .hero-logo-frame::before {
-      inset: 17px;
-    }
-
-    .hero-logo-frame::after {
-      inset: -18px;
-      border-style: dashed;
-      border-color: rgba(192,192,192,.12);
-    }
-
-    .hero-logo {
-      width: 76%;
-      max-height: 76%;
-      object-fit: contain;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 12px 25px rgba(0,0,0,.55));
-    }
-
-    .hero-stamp {
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      background: #111111;
-      border: 1px solid #383838;
-      border-left: 4px solid var(--red);
-      padding: 13px 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-stamp strong {
       display: block;
-      font-size: 12px;
-      letter-spacing: 1px;
+      width: 100%;
+      overflow: hidden;
+      background: #050505;
+      border-bottom: 3px solid var(--red);
     }
-
-    .hero-stamp span {
-      color: var(--silver);
-      font-size: 10px;
+    .hero-banner {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-actions-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 22px 18px;
+      background: linear-gradient(90deg, #080808, #191919, #080808);
+      border-bottom: 1px solid #292929;
+    }
+    .hero-actions-bar .hero-caption {
+      color: #e7e7e7;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-right: 10px;
+    }
+    @media (max-width: 700px) {
+      .hero-banner { aspect-ratio: 4 / 3; object-position: center; }
+      .hero-actions-bar { padding: 18px 16px; }
+      .hero-actions-bar .hero-caption { width: 100%; text-align: center; margin: 0 0 4px; line-height: 1.6; }
+      .hero-actions-bar .btn { width: 100%; max-width: 420px; justify-content: center; }
     }
 
     /* FAIXA DE DESTAQUES */
@@ -1388,52 +1233,6 @@
         min-height: 48px;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-top: 60px;
-        padding-bottom: 55px;
-      }
-
-      .hero h1 {
-        font-size: clamp(36px, 10vw, 52px);
-        letter-spacing: -1.5px;
-      }
-
-      .hero-copy > p {
-        font-size: 13px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-points {
-        gap: 12px 16px;
-      }
-
-      .hero-visual {
-        min-height: 300px;
-      }
-
-      .hero-logo-frame {
-        width: min(75vw, 310px);
-      }
-
-      .hero-stamp {
-        left: 0;
-        bottom: -3px;
-      }
-
       .trust-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1647,56 +1446,13 @@
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-
-        <div class="hero-copy">
-          <div class="hero-tag">Transporte executivo e turismo</div>
-
-          <h1>
-            Sua viagem merece
-            <span>um transporte</span>
-            à altura.
-          </h1>
-
-          <p>
-            Viação LBL e Leandro &amp; Recanto Transportes Executivos.
-            Conforto, segurança e atendimento personalizado para viagens,
-            eventos, fretamentos e experiências por todo o Brasil.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#contato" class="btn btn-primary">
-              Solicitar meu orçamento ↗
-            </a>
-
-            <a href="#frota" class="btn btn-outline">
-              Conheça nossa frota
-            </a>
-          </div>
-
-          <div class="hero-points">
-            <div class="hero-point"><span>✓</span> Atendimento personalizado</div>
-            <div class="hero-point"><span>✓</span> Viagens sob consulta</div>
-            <div class="hero-point"><span>✓</span> Itapetininga e todo o Brasil</div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="hero-logo-frame">
-            <img
-              class="hero-logo"
-              src="logo.png"
-              alt="Logotipo da Viação LBL">
-          </div>
-
-          <div class="hero-stamp">
-            <strong>VIAÇÃO LBL</strong>
-            <span>Seu destino, nossa missão.</span>
-          </div>
-        </div>
-
+    <!-- BANNER PRINCIPAL: textos e identidade visual estão na própria arte -->
+    <section class="hero" id="inicio" aria-label="Viação LBL — Seu destino, nossa prioridade">
+      <img class="hero-banner" src="banner.png" alt="Viação LBL — Seu destino, nossa prioridade. Segurança em toda viagem, conforto em cada trajeto, pontualidade sempre, turismo e transporte. Viagens que te levam mais longe!" fetchpriority="high">
+      <div class="hero-actions-bar">
+        <span class="hero-caption">Transporte executivo, turismo e fretamento</span>
+        <a href="#contato" class="btn btn-primary">Solicitar orçamento ↗</a>
+        <a href="#frota" class="btn btn-outline">Conheça nossa frota</a>
       </div>
     </section>
 
