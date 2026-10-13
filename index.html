@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -266,7 +266,8 @@
       font-size: 24px;
     }
 
-    /* BANNER PRINCIPAL VIAÇÃO LBL */
+    /* BANNER PRINCIPAL RESPONSIVO */
+
     .hero {
       position: relative;
       display: block;
@@ -275,14 +276,21 @@
       background: #050505;
       border-bottom: 3px solid var(--red);
     }
+
+    .hero picture {
+      display: block;
+      width: 100%;
+      line-height: 0;
+    }
+
     .hero-banner {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 3 / 1;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
     }
+
     .hero-actions-bar {
       display: flex;
       justify-content: center;
@@ -293,6 +301,7 @@
       background: linear-gradient(90deg, #080808, #191919, #080808);
       border-bottom: 1px solid #292929;
     }
+
     .hero-actions-bar .hero-caption {
       color: #e7e7e7;
       font-size: 13px;
@@ -301,11 +310,24 @@
       text-transform: uppercase;
       margin-right: 10px;
     }
+
     @media (max-width: 700px) {
-      .hero-banner { aspect-ratio: 4 / 3; object-position: center; }
-      .hero-actions-bar { padding: 18px 16px; }
-      .hero-actions-bar .hero-caption { width: 100%; text-align: center; margin: 0 0 4px; line-height: 1.6; }
-      .hero-actions-bar .btn { width: 100%; max-width: 420px; justify-content: center; }
+      .hero-actions-bar {
+        padding: 18px 16px;
+      }
+
+      .hero-actions-bar .hero-caption {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 4px;
+        line-height: 1.6;
+      }
+
+      .hero-actions-bar .btn {
+        width: 100%;
+        max-width: 420px;
+        justify-content: center;
+      }
     }
 
     /* FAIXA DE DESTAQUES */
@@ -1142,14 +1164,6 @@
         font-size: 15px;
       }
 
-      .hero-grid {
-        gap: 25px;
-      }
-
-      .hero-logo-frame {
-        width: 320px;
-      }
-
       .fleet-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1446,9 +1460,21 @@
 
   <main>
 
-    <!-- BANNER PRINCIPAL: textos e identidade visual estão na própria arte -->
+    <!-- BANNER PRINCIPAL: DESKTOP E MOBILE -->
     <section class="hero" id="inicio" aria-label="Viação LBL — Seu destino, nossa prioridade">
-      <img class="hero-banner" src="banner.png" alt="Viação LBL — Seu destino, nossa prioridade. Segurança em toda viagem, conforto em cada trajeto, pontualidade sempre, turismo e transporte. Viagens que te levam mais longe!" fetchpriority="high">
+
+      <picture>
+        <source
+          media="(max-width: 700px)"
+          srcset="bannermobile.png">
+
+        <img
+          class="hero-banner"
+          src="bannerdesktop.png"
+          alt="Viação LBL — Seu destino, nossa prioridade. Segurança em toda viagem, conforto em cada trajeto, pontualidade sempre, turismo e transporte. Viagens que te levam mais longe!"
+          fetchpriority="high">
+      </picture>
+
       <div class="hero-actions-bar">
         <span class="hero-caption">Transporte executivo, turismo e fretamento</span>
         <a href="#contato" class="btn btn-primary">Solicitar orçamento ↗</a>
@@ -2323,3 +2349,4 @@
 
 </body>
 </html>
+```
