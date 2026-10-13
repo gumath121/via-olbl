@@ -615,6 +615,28 @@
       height: 100%;
       object-fit: cover;
       transition: transform .4s;
+      min-width: 0;
+    }
+
+    .vehicle-photo.dual-photo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .vehicle-photo.dual-photo img {
+      min-width: 0;
+    }
+
+    .motorhome-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .motorhome-gallery img {
+      min-width: 0;
+      height: 340px;
     }
 
     .vehicle-card:hover .vehicle-photo img {
@@ -1476,6 +1498,14 @@
         height: 250px;
       }
 
+      .motorhome-gallery {
+        gap: 8px;
+      }
+
+      .motorhome-gallery img {
+        height: 250px;
+      }
+
       .motorhome-placeholder {
         min-height: 250px;
       }
@@ -1867,11 +1897,9 @@
 
           <!-- VANS -->
           <article class="vehicle-card">
-            <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?auto=format&fit=crop&w=900&q=85"
-                alt="Van para transporte de passageiros"
-                loading="lazy">
+            <div class="vehicle-photo dual-photo">
+              <img src="vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
+              <img src="vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Grupos</span>
             </div>
@@ -1898,11 +1926,9 @@
 
           <!-- MICRO-ÔNIBUS -->
           <article class="vehicle-card">
-            <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=85"
-                alt="Ônibus para transporte de grupos"
-                loading="lazy">
+            <div class="vehicle-photo dual-photo">
+              <img src="microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
+              <img src="microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Fretamento</span>
             </div>
@@ -1929,11 +1955,9 @@
 
           <!-- ÔNIBUS -->
           <article class="vehicle-card">
-            <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85"
-                alt="Ônibus rodoviário para viagens"
-                loading="lazy">
+            <div class="vehicle-photo dual-photo">
+              <img src="onibusg7.png" alt="Ônibus G7 da Viação LBL" loading="lazy">
+              <img src="onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Rodoviário</span>
             </div>
@@ -1966,22 +1990,9 @@
     <section class="section motorhome-section" id="motorhome">
       <div class="container motorhome-grid">
 
-        <div class="motorhome-art">
-          <!--
-            Quando tiver uma foto real do motorhome, coloque o arquivo
-            na pasta principal do repositório com o nome motorhome.jpg.
-            Depois substitua este bloco de motorhome-placeholder por:
-            <img src="motorhome.jpg" alt="Motorhome da Viação LBL">
-          -->
-
-          <div class="motorhome-placeholder">
-            <div class="icon">🚐</div>
-            <strong>Motorhome Marcopolo Viale</strong>
-            <span>
-              Espaço, comodidade e estrutura para experiências de viagem.
-              Consulte as condições de utilização.
-            </span>
-          </div>
+        <div class="motorhome-art motorhome-gallery">
+          <img src="motorhome.png" alt="Motorhome da Viação LBL" loading="lazy">
+          <img src="motorhome2.png" alt="Interior ou segunda vista do motorhome da Viação LBL" loading="lazy">
         </div>
 
         <div class="motorhome-copy">
