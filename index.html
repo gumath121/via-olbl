@@ -423,6 +423,157 @@
       font-weight: 900;
     }
 
+    /* GALERIA DE FOTOS — QUEM SOMOS */
+
+    .about-gallery {
+      margin-top: 55px;
+      padding: 28px;
+      background: #090909;
+      border: 1px solid #303030;
+      border-radius: var(--radius);
+    }
+
+    .about-gallery-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .about-gallery-heading h3 {
+      font-size: clamp(21px, 3vw, 30px);
+      font-weight: 900;
+      line-height: 1.3;
+    }
+
+    .about-gallery-heading h3 span {
+      color: var(--red);
+    }
+
+    .about-gallery-heading p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .about-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #151515;
+      border: 1px solid #333;
+    }
+
+    .about-carousel-track {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 8;
+    }
+
+    .about-carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+
+    .about-carousel-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .about-carousel-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080808;
+    }
+
+    .about-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      background: rgba(0,0,0,.75);
+      color: #fff;
+      font-size: 27px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+
+    .about-carousel-arrow:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .about-carousel-arrow.prev {
+      left: 18px;
+    }
+
+    .about-carousel-arrow.next {
+      right: 18px;
+    }
+
+    .about-carousel-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .about-carousel-counter {
+      color: var(--silver);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .about-carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .about-carousel-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #555;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .about-carousel-dot.active {
+      background: var(--red);
+      transform: scale(1.4);
+    }
+
+    .about-gallery-caption {
+      color: #999;
+      font-size: 10px;
+      text-align: right;
+      margin-top: 12px;
+    }
+
     /* FROTA */
 
     .fleet-grid {
@@ -468,17 +619,6 @@
 
     .vehicle-photo.dual-photo img {
       min-width: 0;
-    }
-
-    .motorhome-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .motorhome-gallery img {
-      min-width: 0;
-      height: 340px;
     }
 
     .vehicle-card:hover .vehicle-photo img {
@@ -579,6 +719,22 @@
       height: 340px;
       object-fit: cover;
       border-radius: 9px;
+    }
+
+    .motorhome-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 12px;
+    }
+
+    .motorhome-gallery img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      height: 340px;
+      object-fit: cover;
     }
 
     .motorhome-placeholder {
@@ -1285,6 +1441,42 @@
         grid-template-columns: 1fr;
       }
 
+      .about-gallery {
+        margin-top: 35px;
+        padding: 14px;
+      }
+
+      .about-carousel-track {
+        aspect-ratio: 4 / 3;
+      }
+
+      .about-carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+      }
+
+      .about-carousel-arrow.prev {
+        left: 10px;
+      }
+
+      .about-carousel-arrow.next {
+        right: 10px;
+      }
+
+      .about-carousel-footer {
+        justify-content: center;
+      }
+
+      .about-carousel-counter {
+        width: 100%;
+        text-align: center;
+      }
+
+      .about-carousel-dots {
+        gap: 8px;
+      }
+
       .fleet-grid,
       .tour-grid {
         grid-template-columns: 1fr;
@@ -1509,10 +1701,7 @@
           <!-- CITROËN C4 LOUNGE -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="./citroen.jpg"
-                alt="Citroën C4 Lounge Exclusive"
-                loading="lazy">
+              <img src="./citroen.jpg" alt="Citroën C4 Lounge Exclusive" loading="lazy">
               <span class="vehicle-type">Executivo</span>
             </div>
             <div class="vehicle-body">
@@ -1533,10 +1722,7 @@
           <!-- CHEVROLET CRUZE -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="./cruze.jpg"
-                alt="Chevrolet Cruze Sedan LTZ"
-                loading="lazy">
+              <img src="./cruze.jpg" alt="Chevrolet Cruze Sedan LTZ" loading="lazy">
               <span class="vehicle-type">Executivo</span>
             </div>
             <div class="vehicle-body">
@@ -1557,10 +1743,7 @@
           <!-- TOYOTA SW4 -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="./sw4.jpg"
-                alt="Toyota SW4 SRX"
-                loading="lazy">
+              <img src="./sw4.jpg" alt="Toyota SW4 SRX" loading="lazy">
               <span class="vehicle-type">SUV</span>
             </div>
             <div class="vehicle-body">
@@ -1648,51 +1831,154 @@
       </div>
     </section>
 
-    <!-- EMPRESA -->
+    <!-- EMPRESA / QUEM SOMOS -->
     <section class="section section-dark" id="empresa">
-      <div class="container about-grid">
-        <div class="about-visual">
-          <img
-            src="./logo.png"
-            alt="Viação LBL e Leandro & Recanto Transportes Executivos"
-            class="about-logo">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual">
+            <img
+              src="./logo.png"
+              alt="Viação LBL e Leandro & Recanto Transportes Executivos"
+              class="about-logo">
+          </div>
+
+          <div class="about-copy">
+            <span class="eyebrow">Quem somos</span>
+            <h2>Mais que transporte, <span>uma experiência.</span></h2>
+
+            <p>
+              A Viação LBL e Leandro &amp; Recanto Transportes Executivos
+              oferece soluções de transporte para quem valoriza organização,
+              conforto e atendimento diferenciado.
+            </p>
+            <p>
+              Trabalhamos com opções para viagens particulares, compromissos
+              profissionais, eventos, fretamentos, passeios e excursões.
+              Nosso atendimento é planejado conforme o destino e as necessidades
+              de cada cliente.
+            </p>
+            <p>
+              Atendemos Itapetininga e região, Grande São Paulo e viagens
+              para diferentes destinos do Brasil, mediante consulta.
+            </p>
+
+            <ul class="about-checks">
+              <li>Atendimento sob medida</li>
+              <li>Opções para diferentes grupos</li>
+              <li>Viagens particulares e corporativas</li>
+              <li>Planejamento de itinerários</li>
+              <li>Fretamentos e excursões</li>
+              <li>Orçamentos personalizados</li>
+            </ul>
+
+            <a href="#contato" class="btn btn-primary">Fale com nossa equipe ↗</a>
+          </div>
         </div>
 
-        <div class="about-copy">
-          <span class="eyebrow">Quem somos</span>
-          <h2>Mais que transporte, <span>uma experiência.</span></h2>
+        <!-- GALERIA DE FOTOS DA EMPRESA -->
+        <div class="about-gallery">
+          <div class="about-gallery-heading">
+            <div>
+              <span class="eyebrow">Nossa trajetória em imagens</span>
+              <h3>Conheça a <span>Viação LBL</span></h3>
+              <p>Confira alguns registros da nossa empresa, frota e viagens.</p>
+            </div>
+          </div>
 
-          <p>
-            A Viação LBL e Leandro &amp; Recanto Transportes Executivos
-            oferece soluções de transporte para quem valoriza organização,
-            conforto e atendimento diferenciado.
-          </p>
-          <p>
-            Trabalhamos com opções para viagens particulares, compromissos
-            profissionais, eventos, fretamentos, passeios e excursões.
-            Nosso atendimento é planejado conforme o destino e as necessidades
-            de cada cliente.
-          </p>
-          <p>
-            Atendemos Itapetininga e região, Grande São Paulo e viagens
-            para diferentes destinos do Brasil, mediante consulta.
-          </p>
+          <div class="about-carousel" id="aboutCarousel">
+            <div class="about-carousel-track">
 
-          <ul class="about-checks">
-            <li>Atendimento sob medida</li>
-            <li>Opções para diferentes grupos</li>
-            <li>Viagens particulares e corporativas</li>
-            <li>Planejamento de itinerários</li>
-            <li>Fretamentos e excursões</li>
-            <li>Orçamentos personalizados</li>
-          </ul>
+              <div class="about-carousel-slide active">
+                <img src="./FOTO1.jpg" alt="Galeria Viação LBL — foto 1" loading="eager">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO2.jpg" alt="Galeria Viação LBL — foto 2" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO3.jpg" alt="Galeria Viação LBL — foto 3" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO4.jpg" alt="Galeria Viação LBL — foto 4" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO5.jpg" alt="Galeria Viação LBL — foto 5" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO6.jpg" alt="Galeria Viação LBL — foto 6" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO7.jpg" alt="Galeria Viação LBL — foto 7" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO8.jpg" alt="Galeria Viação LBL — foto 8" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO9.jpg" alt="Galeria Viação LBL — foto 9" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO10.jpg" alt="Galeria Viação LBL — foto 10" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO11.jpg" alt="Galeria Viação LBL — foto 11" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO12.jpg" alt="Galeria Viação LBL — foto 12" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO13.jpg" alt="Galeria Viação LBL — foto 13" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO14.jpg" alt="Galeria Viação LBL — foto 14" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO15.jpg" alt="Galeria Viação LBL — foto 15" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO16.jpg" alt="Galeria Viação LBL — foto 16" loading="lazy">
+              </div>
+              <div class="about-carousel-slide">
+                <img src="./FOTO17.jpg" alt="Galeria Viação LBL — foto 17" loading="lazy">
+              </div>
 
-          <a href="#contato" class="btn btn-primary">Fale com nossa equipe ↗</a>
+            </div>
+
+            <button
+              class="about-carousel-arrow prev"
+              id="aboutCarouselPrev"
+              type="button"
+              aria-label="Ver foto anterior">
+              ‹
+            </button>
+
+            <button
+              class="about-carousel-arrow next"
+              id="aboutCarouselNext"
+              type="button"
+              aria-label="Ver próxima foto">
+              ›
+            </button>
+          </div>
+
+          <div class="about-carousel-footer">
+            <span class="about-carousel-counter" id="aboutCarouselCounter">
+              Foto 1 de 17
+            </span>
+
+            <div
+              class="about-carousel-dots"
+              id="aboutCarouselDots"
+              aria-label="Selecionar foto">
+            </div>
+          </div>
+
+          <p class="about-gallery-caption">
+            Utilize as setas ou os indicadores para navegar pelas fotos.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- MOTORHOME: DUAS IMAGENS -->
+    <!-- MOTORHOME -->
     <section class="section motorhome-section" id="motorhome">
       <div class="container motorhome-grid">
         <div class="motorhome-art motorhome-gallery">
@@ -2115,6 +2401,166 @@
 
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
     });
+
+    // CARROSSEL DE FOTOS — QUEM SOMOS
+    (function () {
+      const carousel = document.getElementById("aboutCarousel");
+
+      if (!carousel) return;
+
+      const slides = Array.from(
+        carousel.querySelectorAll(".about-carousel-slide")
+      );
+
+      const prevButton = document.getElementById("aboutCarouselPrev");
+      const nextButton = document.getElementById("aboutCarouselNext");
+      const counter = document.getElementById("aboutCarouselCounter");
+      const dotsContainer = document.getElementById("aboutCarouselDots");
+
+      if (!slides.length || !prevButton || !nextButton || !counter || !dotsContainer) {
+        return;
+      }
+
+      let currentIndex = 0;
+      let autoplay = null;
+
+      // Cria um indicador para cada foto
+      slides.forEach(function (_, index) {
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+        dot.className = "about-carousel-dot";
+        dot.setAttribute("aria-label", "Ver foto " + (index + 1));
+
+        dot.addEventListener("click", function () {
+          showSlide(index);
+          restartAutoplay();
+        });
+
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(
+        dotsContainer.querySelectorAll(".about-carousel-dot")
+      );
+
+      function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach(function (slide, i) {
+          const isActive = i === currentIndex;
+
+          slide.classList.toggle("active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+
+          if (isActive) {
+            const image = slide.querySelector("img");
+
+            if (image) {
+              image.loading = "eager";
+            }
+          }
+        });
+
+        dots.forEach(function (dot, i) {
+          const isActive = i === currentIndex;
+
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+
+        counter.textContent =
+          "Foto " + (currentIndex + 1) + " de " + slides.length;
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function previousSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+
+        if (
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          !document.hidden
+        ) {
+          autoplay = setInterval(nextSlide, 4000);
+        }
+      }
+
+      function stopAutoplay() {
+        if (autoplay !== null) {
+          clearInterval(autoplay);
+          autoplay = null;
+        }
+      }
+
+      function restartAutoplay() {
+        startAutoplay();
+      }
+
+      nextButton.addEventListener("click", function () {
+        nextSlide();
+        restartAutoplay();
+      });
+
+      prevButton.addEventListener("click", function () {
+        previousSlide();
+        restartAutoplay();
+      });
+
+      // Pausa quando o visitante interage com a galeria
+      carousel.addEventListener("mouseenter", stopAutoplay);
+      carousel.addEventListener("mouseleave", startAutoplay);
+      carousel.addEventListener("focusin", stopAutoplay);
+      carousel.addEventListener("focusout", startAutoplay);
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      // Navegação por gesto de deslizar no celular
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      carousel.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", function (event) {
+        const touchEndX = event.changedTouches[0].screenX;
+        const touchEndY = event.changedTouches[0].screenY;
+
+        const differenceX = touchEndX - touchStartX;
+        const differenceY = touchEndY - touchStartY;
+
+        // Só navega se o gesto for predominantemente horizontal
+        if (
+          Math.abs(differenceX) > 50 &&
+          Math.abs(differenceX) > Math.abs(differenceY)
+        ) {
+          if (differenceX < 0) {
+            nextSlide();
+          } else {
+            previousSlide();
+          }
+
+          restartAutoplay();
+        }
+      }, { passive: true });
+
+      showSlide(0);
+      startAutoplay();
+    })();
   </script>
 
 </body>
