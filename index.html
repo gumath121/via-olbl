@@ -266,7 +266,7 @@
       font-size: 24px;
     }
 
-    /* BANNER PRINCIPAL RESPONSIVO */
+    /* BANNER PRINCIPAL — DESKTOP E MOBILE */
 
     .hero {
       position: relative;
@@ -1428,7 +1428,7 @@
     <div class="container header-inner">
 
       <a href="#inicio" class="brand" aria-label="Viação LBL - início">
-        <img class="brand-logo" src="logo.png" alt="Logotipo Viação LBL">
+        <img class="brand-logo" src="./logo.png" alt="Logotipo Viação LBL">
         <span class="brand-copy">
           <strong>VIAÇÃO LBL</strong>
           <span>Transportes Executivos</span>
@@ -1466,13 +1466,14 @@
       <picture>
         <source
           media="(max-width: 700px)"
-          srcset="bannermobile.png">
+          srcset="./bannermobile.png">
 
         <img
           class="hero-banner"
-          src="bannerdesktop.png"
+          src="./bannerdesktop.png"
           alt="Viação LBL — Seu destino, nossa prioridade. Segurança em toda viagem, conforto em cada trajeto, pontualidade sempre, turismo e transporte. Viagens que te levam mais longe!"
-          fetchpriority="high">
+          fetchpriority="high"
+          onerror="console.error('Erro ao carregar bannerdesktop.png. Verifique se o arquivo está na mesma pasta do index.html e se o nome está correto.');">
       </picture>
 
       <div class="hero-actions-bar">
@@ -1626,8 +1627,8 @@
           <!-- VANS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
-              <img src="vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
+              <img src="./vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
+              <img src="./vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Grupos</span>
             </div>
@@ -1655,8 +1656,8 @@
           <!-- MICRO-ÔNIBUS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
-              <img src="microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
+              <img src="./microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
+              <img src="./microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Fretamento</span>
             </div>
@@ -1684,8 +1685,8 @@
           <!-- ÔNIBUS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="onibusg7.png" alt="Ônibus G7 da Viação LBL" loading="lazy">
-              <img src="onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
+              <img src="./onibusg7.png" alt="Ônibus G7 da Viação LBL" loading="lazy">
+              <img src="./onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
 
               <span class="vehicle-type">Rodoviário</span>
             </div>
@@ -1714,13 +1715,13 @@
       </div>
     </section>
 
-    <!-- EMPRESA: AGORA ABAIXO DA FROTA -->
+    <!-- EMPRESA -->
     <section class="section section-dark" id="empresa">
       <div class="container about-grid">
 
         <div class="about-visual">
           <img
-            src="logo.png"
+            src="./logo.png"
             alt="Viação LBL e Leandro & Recanto Transportes Executivos"
             class="about-logo">
         </div>
@@ -1773,8 +1774,8 @@
       <div class="container motorhome-grid">
 
         <div class="motorhome-art motorhome-gallery">
-          <img src="motorhome.png" alt="Motorhome da Viação LBL" loading="lazy">
-          <img src="motorhome2.png" alt="Interior ou segunda vista do motorhome da Viação LBL" loading="lazy">
+          <img src="./motorhome.png" alt="Motorhome da Viação LBL" loading="lazy">
+          <img src="./motorhome2.png" alt="Interior ou segunda vista do motorhome da Viação LBL" loading="lazy">
         </div>
 
         <div class="motorhome-copy">
@@ -2168,7 +2169,7 @@
           <a href="#inicio" class="brand">
             <img
               class="brand-logo"
-              src="logo.png"
+              src="./logo.png"
               alt="Logotipo Viação LBL">
 
             <span class="brand-copy">
