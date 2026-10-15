@@ -1,14 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Viação LBL | Transporte Executivo, Turismo e Fretamento</title>
-
-  <meta name="description" content="Viação LBL e Leandro & Recanto Transportes Executivos. Transporte executivo, fretamento, viagens, turismo, motorhome e motorista particular em Itapetininga, região e todo o Brasil.">
-
+  <meta name="description" content="Viação LBL e Leandro & Recanto Transportes Executivos. Transporte executivo, turismo, fretamento e viagens em Itapetininga, região, Grande São Paulo e todo o Brasil.">
   <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,19 +13,18 @@
 
   <style>
     :root {
-      --black: #000000;
-      --black-soft: #0B0B0B;
-      --card: #111111;
-      --red: #C62836;
-      --red-dark: #A91F2B;
-      --silver: #C0C0C0;
-      --white: #FFFFFF;
-      --text: #E8E8E8;
-      --muted: #AAAAAA;
+      --black: #000;
+      --black-soft: #0b0b0b;
+      --card: #111;
+      --red: #c62836;
+      --red-dark: #a91f2b;
+      --silver: #c0c0c0;
+      --white: #fff;
+      --text: #e8e8e8;
+      --muted: #aaa;
       --border: #303030;
       --container: 1180px;
       --radius: 16px;
-      --shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
     }
 
     * {
@@ -65,16 +60,8 @@
       display: block;
     }
 
-    button,
-    input,
-    select,
-    textarea {
+    button, input, select, textarea {
       font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -168,22 +155,13 @@
       color: var(--black);
     }
 
-    .btn-silver {
-      background: var(--silver);
-      color: var(--black);
-    }
-
-    .btn-silver:hover {
-      background: #E0E0E0;
-    }
-
     /* CABEÇALHO */
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, .96);
+      background: rgba(0,0,0,.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
@@ -236,7 +214,7 @@
     }
 
     .nav-links > a:not(.btn) {
-      color: #D5D5D5;
+      color: #d5d5d5;
       font-size: 11px;
       font-weight: 700;
       transition: color .2s;
@@ -266,23 +244,30 @@
       font-size: 24px;
     }
 
-    /* BANNER PRINCIPAL VIAÇÃO LBL */
+    /* BANNER DESKTOP E MOBILE */
+
     .hero {
-      position: relative;
       display: block;
       width: 100%;
       overflow: hidden;
       background: #050505;
       border-bottom: 3px solid var(--red);
     }
+
+    .hero picture {
+      display: block;
+      width: 100%;
+      line-height: 0;
+    }
+
     .hero-banner {
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 3 / 1;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
     }
+
     .hero-actions-bar {
       display: flex;
       justify-content: center;
@@ -293,7 +278,8 @@
       background: linear-gradient(90deg, #080808, #191919, #080808);
       border-bottom: 1px solid #292929;
     }
-    .hero-actions-bar .hero-caption {
+
+    .hero-caption {
       color: #e7e7e7;
       font-size: 13px;
       font-weight: 700;
@@ -301,17 +287,11 @@
       text-transform: uppercase;
       margin-right: 10px;
     }
-    @media (max-width: 700px) {
-      .hero-banner { aspect-ratio: 4 / 3; object-position: center; }
-      .hero-actions-bar { padding: 18px 16px; }
-      .hero-actions-bar .hero-caption { width: 100%; text-align: center; margin: 0 0 4px; line-height: 1.6; }
-      .hero-actions-bar .btn { width: 100%; max-width: 420px; justify-content: center; }
-    }
 
-    /* FAIXA DE DESTAQUES */
+    /* DIFERENCIAIS */
 
     .trust-bar {
-      background: #0B0B0B;
+      background: #0b0b0b;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
@@ -333,7 +313,6 @@
 
     .trust-item strong {
       display: block;
-      color: var(--white);
       font-size: 13px;
       font-weight: 800;
     }
@@ -343,47 +322,24 @@
       font-size: 11px;
     }
 
-    /* SOBRE A EMPRESA */
+    /* QUEM SOMOS */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 45px;
       align-items: center;
     }
 
     .about-visual {
-      min-height: 390px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 35px;
+      width: 100%;
+      min-width: 0;
+      padding: 0;
       border: 1px solid #292929;
       border-radius: var(--radius);
-      background:
-        radial-gradient(circle at 50% 45%, rgba(198,40,54,.15), transparent 55%),
-        #090909;
+      background: #090909;
       position: relative;
       overflow: hidden;
-    }
-
-    .about-visual::before {
-      content: "";
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      border: 1px solid rgba(192,192,192,.2);
-      border-radius: 50%;
-      box-shadow: 0 0 0 30px rgba(192,192,192,.03),
-                  0 0 0 60px rgba(192,192,192,.025);
-    }
-
-    .about-logo {
-      position: relative;
-      z-index: 1;
-      width: min(80%, 300px);
-      max-height: 300px;
-      object-fit: contain;
     }
 
     .about-copy h2 {
@@ -415,7 +371,7 @@
       display: flex;
       align-items: flex-start;
       gap: 9px;
-      color: #E2E2E2;
+      color: #e2e2e2;
       font-size: 12px;
       font-weight: 600;
     }
@@ -426,15 +382,129 @@
       font-weight: 900;
     }
 
+    /* CARROSSEL DE 17 FOTOS NO LUGAR DO LOGO */
+
+    .about-carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .about-carousel-track {
+      position: relative;
+      width: 100%;
+      height: 390px;
+      background: #080808;
+    }
+
+    .about-carousel-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .5s ease, visibility .5s ease;
+    }
+
+    .about-carousel-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+
+    .about-carousel-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #080808;
+    }
+
+    .about-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 50%;
+      background: rgba(0,0,0,.78);
+      color: #fff;
+      font-size: 26px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+
+    .about-carousel-arrow:hover {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .about-carousel-arrow.prev {
+      left: 12px;
+    }
+
+    .about-carousel-arrow.next {
+      right: 12px;
+    }
+
+    .about-carousel-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 12px;
+      background: #090909;
+      border-top: 1px solid #252525;
+    }
+
+    .about-carousel-counter {
+      color: var(--silver);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .about-carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .about-carousel-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #555;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .about-carousel-dot.active {
+      background: var(--red);
+      transform: scale(1.4);
+    }
+
     /* FROTA */
 
     .fleet-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 23px;
     }
 
     .vehicle-card {
+      min-width: 0;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -445,12 +515,12 @@
     .vehicle-card:hover {
       transform: translateY(-5px);
       border-color: rgba(198,40,54,.8);
-      box-shadow: var(--shadow);
+      box-shadow: 0 14px 40px rgba(0,0,0,.3);
     }
 
     .vehicle-photo {
       height: 210px;
-      background: #1B1B1B;
+      background: #1b1b1b;
       position: relative;
       overflow: hidden;
     }
@@ -458,30 +528,15 @@
     .vehicle-photo img {
       width: 100%;
       height: 100%;
+      min-width: 0;
       object-fit: cover;
       transition: transform .4s;
-      min-width: 0;
     }
 
     .vehicle-photo.dual-photo {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3px;
-    }
-
-    .vehicle-photo.dual-photo img {
-      min-width: 0;
-    }
-
-    .motorhome-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .motorhome-gallery img {
-      min-width: 0;
-      height: 340px;
     }
 
     .vehicle-card:hover .vehicle-photo img {
@@ -539,7 +594,7 @@
       padding: 5px 8px;
       border: 1px solid #393939;
       border-radius: 4px;
-      color: #D1D1D1;
+      color: #d1d1d1;
       font-size: 10px;
     }
 
@@ -552,7 +607,6 @@
     /* MOTORHOME */
 
     .motorhome-section {
-      position: relative;
       overflow: hidden;
       background:
         radial-gradient(ellipse at 90% 50%, rgba(198,40,54,.13), transparent 50%),
@@ -561,57 +615,31 @@
 
     .motorhome-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 40px;
       align-items: center;
     }
 
     .motorhome-art {
-      min-height: 390px;
-      padding: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-width: 0;
+      padding: 15px;
       border: 1px solid #333;
       border-radius: var(--radius);
       background: #101010;
     }
 
-    .motorhome-art img {
+    .motorhome-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .motorhome-gallery img {
       width: 100%;
+      min-width: 0;
       height: 340px;
       object-fit: cover;
       border-radius: 9px;
-    }
-
-    .motorhome-placeholder {
-      width: 100%;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      text-align: center;
-      border: 1px dashed #555;
-      border-radius: 9px;
-      padding: 25px;
-      color: var(--silver);
-    }
-
-    .motorhome-placeholder .icon {
-      font-size: 55px;
-    }
-
-    .motorhome-placeholder strong {
-      color: var(--white);
-      font-size: 18px;
-    }
-
-    .motorhome-placeholder span {
-      max-width: 300px;
-      color: var(--muted);
-      font-size: 12px;
     }
 
     .motorhome-copy h2 {
@@ -648,14 +676,14 @@
       border-radius: 8px;
     }
 
-    .amenity .amenity-icon {
+    .amenity-icon {
       color: var(--red);
       font-size: 18px;
       flex-shrink: 0;
     }
 
     .amenity span:last-child {
-      color: #D9D9D9;
+      color: #d9d9d9;
       font-size: 11px;
       font-weight: 600;
     }
@@ -670,7 +698,7 @@
 
     .driver-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 55px;
       align-items: center;
     }
@@ -703,7 +731,7 @@
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      color: #E1E1E1;
+      color: #e1e1e1;
       font-size: 13px;
     }
 
@@ -716,9 +744,7 @@
       padding: 35px;
       border: 1px solid #333;
       border-radius: var(--radius);
-      background:
-        linear-gradient(145deg, rgba(198,40,54,.1), transparent 60%),
-        #101010;
+      background: linear-gradient(145deg, rgba(198,40,54,.1), transparent 60%), #101010;
     }
 
     .driver-panel h3 {
@@ -741,7 +767,7 @@
       border-top: 1px solid #303030;
     }
 
-    .driver-panel-item .big-icon {
+    .big-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -768,7 +794,7 @@
 
     .tour-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -819,7 +845,7 @@
       color: var(--red);
     }
 
-    /* CHAMADA */
+    /* CHAMADA PARA ORÇAMENTO */
 
     .cta-band {
       padding: 65px 0;
@@ -837,8 +863,7 @@
       height: 360px;
       border: 1px solid rgba(255,255,255,.2);
       border-radius: 50%;
-      box-shadow: 0 0 0 35px rgba(255,255,255,.04),
-                  0 0 0 70px rgba(255,255,255,.03);
+      box-shadow: 0 0 0 35px rgba(255,255,255,.04), 0 0 0 70px rgba(255,255,255,.03);
     }
 
     .cta-inner {
@@ -877,7 +902,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
       gap: 55px;
       align-items: start;
     }
@@ -969,6 +994,7 @@
       display: flex;
       flex-direction: column;
       gap: 7px;
+      min-width: 0;
     }
 
     .field.full {
@@ -976,7 +1002,7 @@
     }
 
     .field label {
-      color: #E2E2E2;
+      color: #e2e2e2;
       font-size: 11px;
       font-weight: 700;
     }
@@ -1004,12 +1030,12 @@
 
     .field input::placeholder,
     .field textarea::placeholder {
-      color: #777777;
+      color: #777;
     }
 
     .field select option {
-      background: #111111;
-      color: #FFFFFF;
+      background: #111;
+      color: #fff;
     }
 
     .field textarea {
@@ -1024,7 +1050,7 @@
 
     .form-note {
       margin-top: 12px;
-      color: #888888;
+      color: #888;
       font-size: 10px;
       text-align: center;
     }
@@ -1102,7 +1128,7 @@
       font-weight: 700;
     }
 
-    /* BOTÃO FLUTUANTE WHATSAPP */
+    /* BOTÃO WHATSAPP */
 
     .whatsapp-float {
       position: fixed;
@@ -1115,8 +1141,8 @@
       width: 58px;
       height: 58px;
       border-radius: 50%;
-      background: #25D366;
-      color: #FFFFFF;
+      background: #25d366;
+      color: #fff;
       box-shadow: 0 5px 22px rgba(0,0,0,.45);
       font-size: 26px;
       font-weight: 800;
@@ -1127,7 +1153,7 @@
       transform: scale(1.08);
     }
 
-    /* RESPONSIVIDADE */
+    /* TABLETS */
 
     @media (max-width: 1050px) {
       .nav-links {
@@ -1142,22 +1168,16 @@
         font-size: 15px;
       }
 
-      .hero-grid {
-        gap: 25px;
-      }
-
-      .hero-logo-frame {
-        width: 320px;
-      }
-
       .fleet-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .footer-main {
         gap: 30px;
       }
     }
+
+    /* CELULARES */
 
     @media (max-width: 760px) {
       .container {
@@ -1233,6 +1253,22 @@
         min-height: 48px;
       }
 
+      .hero-actions-bar {
+        padding: 18px 16px;
+      }
+
+      .hero-caption {
+        width: 100%;
+        text-align: center;
+        margin: 0 0 4px;
+        line-height: 1.6;
+      }
+
+      .hero-actions-bar .btn {
+        width: 100%;
+        max-width: 420px;
+      }
+
       .trust-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1263,16 +1299,36 @@
       .motorhome-grid,
       .driver-grid,
       .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
       }
+
+      /* GALERIA EM CIMA E TEXTO EMBAIXO NO MOBILE */
 
       .about-visual {
-        min-height: 300px;
+        order: 1;
       }
 
-      .about-logo {
-        width: min(75%, 245px);
+      .about-copy {
+        order: 2;
+      }
+
+      .about-carousel-track {
+        height: 300px;
+      }
+
+      .about-carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+      }
+
+      .about-carousel-arrow.prev {
+        left: 10px;
+      }
+
+      .about-carousel-arrow.next {
+        right: 10px;
       }
 
       .about-checks {
@@ -1281,7 +1337,7 @@
 
       .fleet-grid,
       .tour-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .vehicle-photo {
@@ -1289,12 +1345,7 @@
       }
 
       .motorhome-art {
-        min-height: 280px;
-        padding: 15px;
-      }
-
-      .motorhome-art img {
-        height: 250px;
+        padding: 10px;
       }
 
       .motorhome-gallery {
@@ -1303,10 +1354,6 @@
 
       .motorhome-gallery img {
         height: 250px;
-      }
-
-      .motorhome-placeholder {
-        min-height: 250px;
       }
 
       .amenities {
@@ -1390,6 +1437,10 @@
       .footer-brand {
         grid-column: auto;
       }
+
+      .about-carousel-track {
+        height: 250px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1412,24 +1463,16 @@
   <!-- CABEÇALHO -->
   <header class="site-header">
     <div class="container header-inner">
-
       <a href="#inicio" class="brand" aria-label="Viação LBL - início">
-        <img class="brand-logo" src="logo.png" alt="Logotipo Viação LBL">
+        <img class="brand-logo" src="./logo.png" alt="Logotipo Viação LBL">
         <span class="brand-copy">
           <strong>VIAÇÃO LBL</strong>
           <span>Transportes Executivos</span>
         </span>
       </a>
 
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="mainNav">
-        ☰
-      </button>
+      <button class="menu-toggle" id="menuToggle" type="button"
+        aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">☰</button>
 
       <nav class="nav-links" id="mainNav" aria-label="Menu principal">
         <a href="#inicio">Início</a>
@@ -1440,304 +1483,299 @@
         <a href="#turismo">Turismo</a>
         <a href="#contato" class="btn btn-primary nav-cta">Solicitar orçamento ↗</a>
       </nav>
-
     </div>
   </header>
 
   <main>
 
-    <!-- BANNER PRINCIPAL: textos e identidade visual estão na própria arte -->
-    <section class="hero" id="inicio" aria-label="Viação LBL — Seu destino, nossa prioridade">
-      <img class="hero-banner" src="banner.png" alt="Viação LBL — Seu destino, nossa prioridade. Segurança em toda viagem, conforto em cada trajeto, pontualidade sempre, turismo e transporte. Viagens que te levam mais longe!" fetchpriority="high">
+    <!-- BANNER -->
+    <section class="hero" id="inicio" aria-label="Viação LBL">
+      <picture>
+        <source media="(max-width: 700px)" srcset="./bannermobile.png">
+        <img class="hero-banner"
+          src="./bannerdesktop.png"
+          alt="Viação LBL — Seu destino, nossa prioridade"
+          fetchpriority="high">
+      </picture>
+
       <div class="hero-actions-bar">
         <span class="hero-caption">Transporte executivo, turismo e fretamento</span>
         <a href="#contato" class="btn btn-primary">Solicitar orçamento ↗</a>
-        <a href="https://excursaoviacaolbl.manus.space/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Excursões Programadas ↗</a>
         <a href="#frota" class="btn btn-outline">Conheça nossa frota</a>
       </div>
     </section>
 
-    <!-- DESTAQUES -->
+    <!-- DIFERENCIAIS -->
     <section class="trust-bar" aria-label="Diferenciais">
       <div class="container trust-grid">
-
         <div class="trust-item">
           <strong>Transporte Executivo</strong>
           <span>Conforto em cada trajeto</span>
         </div>
-
         <div class="trust-item">
           <strong>Fretamento</strong>
           <span>Soluções para grupos</span>
         </div>
-
         <div class="trust-item">
           <strong>Turismo e Excursões</strong>
           <span>Viagens planejadas</span>
         </div>
-
         <div class="trust-item">
           <strong>Atendimento Personalizado</strong>
           <span>Orçamentos sob consulta</span>
         </div>
-
-      </div>
-    </section>
-
-    <!-- EMPRESA -->
-    <section class="section section-dark" id="empresa">
-      <div class="container about-grid">
-
-        <div class="about-visual">
-          <img
-            src="logo.png"
-            alt="Viação LBL e Leandro & Recanto Transportes Executivos"
-            class="about-logo">
-        </div>
-
-        <div class="about-copy">
-          <span class="eyebrow">Quem somos</span>
-
-          <h2>
-            Mais que transporte,
-            <span>uma experiência.</span>
-          </h2>
-
-          <p>
-            A Viação LBL e Leandro &amp; Recanto Transportes Executivos
-            oferece soluções de transporte para quem valoriza organização,
-            conforto e atendimento diferenciado.
-          </p>
-
-          <p>
-            Trabalhamos com opções para viagens particulares, compromissos
-            profissionais, eventos, fretamentos, passeios e excursões.
-            Nosso atendimento é planejado conforme o destino e as necessidades
-            de cada cliente.
-          </p>
-
-          <p>
-            Atendemos Itapetininga e região, Grande São Paulo e viagens
-            para diferentes destinos do Brasil, mediante consulta.
-          </p>
-
-          <ul class="about-checks">
-            <li>Atendimento sob medida</li>
-            <li>Opções para diferentes grupos</li>
-            <li>Viagens particulares e corporativas</li>
-            <li>Planejamento de itinerários</li>
-            <li>Fretamentos e excursões</li>
-            <li>Orçamentos personalizados</li>
-          </ul>
-
-          <a href="#contato" class="btn btn-primary">
-            Fale com nossa equipe ↗
-          </a>
-        </div>
-
       </div>
     </section>
 
     <!-- FROTA -->
     <section class="section section-soft" id="frota">
       <div class="container">
-
         <div class="section-heading">
           <span class="eyebrow">Nossa frota</span>
-
-          <h2>
-            A opção ideal para
-            <span>cada viagem</span>
-          </h2>
-
-          <p>
-            Diferentes categorias de veículos para atender viagens
-            individuais, grupos, eventos, turismo e fretamentos.
-            Consulte disponibilidade e condições.
-          </p>
+          <h2>A opção ideal para <span>cada viagem</span></h2>
+          <p>Diferentes categorias de veículos para viagens individuais, grupos, eventos, turismo e fretamentos. Consulte disponibilidade e condições.</p>
         </div>
 
         <div class="fleet-grid">
 
-          <!-- C4 LOUNGE -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85"
-                alt="Automóvel executivo"
-                loading="lazy">
-
+              <img src="./citroen.jpg" alt="Citroën C4 Lounge Exclusive" loading="lazy">
               <span class="vehicle-type">Executivo</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Citroën C4 Lounge Exclusive</h3>
-
-              <p>
-                Uma opção para deslocamentos particulares,
-                compromissos profissionais e viagens executivas.
-              </p>
-
+              <p>Uma opção para deslocamentos particulares, compromissos profissionais e viagens executivas.</p>
               <div class="vehicle-features">
                 <span>Conforto</span>
                 <span>Viagens particulares</span>
                 <span>Executivo</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Consultar disponibilidade
-              </a>
+              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
           </article>
 
-          <!-- CRUZE -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=85"
-                alt="Sedã para transporte executivo"
-                loading="lazy">
-
+              <img src="./cruze.jpg" alt="Chevrolet Cruze Sedan LTZ" loading="lazy">
               <span class="vehicle-type">Executivo</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Chevrolet Cruze Sedan LTZ</h3>
-
-              <p>
-                Transporte executivo para compromissos, traslados
-                e trajetos planejados.
-              </p>
-
+              <p>Transporte executivo para compromissos, traslados e trajetos planejados.</p>
               <div class="vehicle-features">
                 <span>Conforto</span>
                 <span>Traslados</span>
                 <span>Viagens</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Consultar disponibilidade
-              </a>
+              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
           </article>
 
-          <!-- SW4 -->
           <article class="vehicle-card">
             <div class="vehicle-photo">
-              <img
-                src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85"
-                alt="Veículo utilitário esportivo"
-                loading="lazy">
-
+              <img src="./sw4.jpg" alt="Toyota SW4 SRX" loading="lazy">
               <span class="vehicle-type">SUV</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Toyota SW4 SRX</h3>
-
-              <p>
-                Uma alternativa para quem procura espaço e versatilidade
-                em deslocamentos particulares.
-              </p>
-
+              <p>Uma alternativa para quem procura espaço e versatilidade em deslocamentos particulares.</p>
               <div class="vehicle-features">
                 <span>Até 7 lugares</span>
                 <span>Espaço</span>
                 <span>Viagens</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Consultar disponibilidade
-              </a>
+              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
           </article>
 
-          <!-- VANS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
-              <img src="vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
-
+              <img src="./vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
+              <img src="./vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
               <span class="vehicle-type">Grupos</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Vans Executivas</h3>
-
-              <p>
-                Transporte para grupos, empresas, eventos, excursões
-                e deslocamentos programados.
-              </p>
-
+              <p>Transporte para grupos, empresas, eventos, excursões e deslocamentos programados.</p>
               <div class="vehicle-features">
                 <span>15 passageiros</span>
                 <span>18 passageiros</span>
                 <span>Fretamento</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Solicitar orçamento
-              </a>
+              <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
           </article>
 
-          <!-- MICRO-ÔNIBUS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
-              <img src="microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
-
+              <img src="./microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
+              <img src="./microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
               <span class="vehicle-type">Fretamento</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Micro-ônibus</h3>
-
-              <p>
-                Uma solução para transportar grupos em passeios,
-                eventos, viagens e serviços de fretamento.
-              </p>
-
+              <p>Uma solução para transportar grupos em passeios, eventos, viagens e fretamentos.</p>
               <div class="vehicle-features">
                 <span>Até 32 passageiros</span>
                 <span>Grupos</span>
                 <span>Excursões</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Solicitar orçamento
-              </a>
+              <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
           </article>
 
-          <!-- ÔNIBUS -->
           <article class="vehicle-card">
             <div class="vehicle-photo dual-photo">
-              <img src="onibusg7.png" alt="Ônibus G7 da Viação LBL" loading="lazy">
-              <img src="onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
-
+              <img src="./onibusg7.png" alt="Ônibus G7 da Viação LBL" loading="lazy">
+              <img src="./onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
               <span class="vehicle-type">Rodoviário</span>
             </div>
-
             <div class="vehicle-body">
               <h3>Ônibus G7 LD Semileito</h3>
-
-              <p>
-                Opção para viagens e fretamentos de grupos maiores,
-                conforme disponibilidade.
-              </p>
-
+              <p>Opção para viagens e fretamentos de grupos maiores, conforme disponibilidade.</p>
               <div class="vehicle-features">
                 <span>Até 47 passageiros</span>
                 <span>Semileito</span>
                 <span>Longas distâncias</span>
               </div>
-
-              <a href="#contato" class="btn btn-outline">
-                Solicitar orçamento
-              </a>
+              <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
           </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM SOMOS: GALERIA À ESQUERDA E TEXTO À DIREITA -->
+    <section class="section section-dark" id="empresa">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-visual">
+            <div class="about-carousel" id="aboutCarousel">
+              <div class="about-carousel-track">
+
+                <div class="about-carousel-slide active">
+                  <img src="./FOTO1.jpg" alt="Viação LBL — foto 1" loading="eager">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO2.jpg" alt="Viação LBL — foto 2" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO3.jpg" alt="Viação LBL — foto 3" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO4.jpg" alt="Viação LBL — foto 4" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO5.jpg" alt="Viação LBL — foto 5" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO6.jpg" alt="Viação LBL — foto 6" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO7.jpg" alt="Viação LBL — foto 7" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO8.jpg" alt="Viação LBL — foto 8" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO9.jpg" alt="Viação LBL — foto 9" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO10.jpg" alt="Viação LBL — foto 10" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO11.jpg" alt="Viação LBL — foto 11" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO12.jpg" alt="Viação LBL — foto 12" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO13.jpg" alt="Viação LBL — foto 13" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO14.jpg" alt="Viação LBL — foto 14" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO15.jpg" alt="Viação LBL — foto 15" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO16.jpg" alt="Viação LBL — foto 16" loading="lazy">
+                </div>
+
+                <div class="about-carousel-slide">
+                  <img src="./FOTO17.jpg" alt="Viação LBL — foto 17" loading="lazy">
+                </div>
+
+              </div>
+
+              <button class="about-carousel-arrow prev"
+                id="aboutCarouselPrev"
+                type="button"
+                aria-label="Foto anterior">‹</button>
+
+              <button class="about-carousel-arrow next"
+                id="aboutCarouselNext"
+                type="button"
+                aria-label="Próxima foto">›</button>
+
+              <div class="about-carousel-footer">
+                <span class="about-carousel-counter" id="aboutCarouselCounter">Foto 1 de 17</span>
+                <div class="about-carousel-dots" id="aboutCarouselDots" aria-label="Selecionar foto"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <span class="eyebrow">Quem somos</span>
+            <h2>Mais que transporte, <span>uma experiência.</span></h2>
+
+            <p>
+              A Viação LBL e Leandro &amp; Recanto Transportes Executivos
+              oferece soluções de transporte para quem valoriza organização,
+              conforto e atendimento diferenciado.
+            </p>
+
+            <p>
+              Trabalhamos com opções para viagens particulares, compromissos
+              profissionais, eventos, fretamentos, passeios e excursões.
+              Nosso atendimento é planejado conforme o destino e as necessidades
+              de cada cliente.
+            </p>
+
+            <p>
+              Atendemos Itapetininga e região, Grande São Paulo e viagens
+              para diferentes destinos do Brasil, mediante consulta.
+            </p>
+
+            <ul class="about-checks">
+              <li>Atendimento sob medida</li>
+              <li>Opções para diferentes grupos</li>
+              <li>Viagens particulares e corporativas</li>
+              <li>Planejamento de itinerários</li>
+              <li>Fretamentos e excursões</li>
+              <li>Orçamentos personalizados</li>
+            </ul>
+
+            <a href="#contato" class="btn btn-primary">Fale com nossa equipe ↗</a>
+          </div>
 
         </div>
       </div>
@@ -1748,17 +1786,13 @@
       <div class="container motorhome-grid">
 
         <div class="motorhome-art motorhome-gallery">
-          <img src="motorhome.png" alt="Motorhome da Viação LBL" loading="lazy">
-          <img src="motorhome2.png" alt="Interior ou segunda vista do motorhome da Viação LBL" loading="lazy">
+          <img src="./motorhome.png" alt="Motorhome da Viação LBL" loading="lazy">
+          <img src="./motorhome2.png" alt="Segunda vista do motorhome da Viação LBL" loading="lazy">
         </div>
 
         <div class="motorhome-copy">
           <span class="eyebrow">Viaje de um jeito diferente</span>
-
-          <h2>
-            Conheça nosso
-            <span>motorhome</span>
-          </h2>
+          <h2>Conheça nosso <span>motorhome</span></h2>
 
           <p>
             Uma experiência diferenciada para viagens, lazer e momentos
@@ -1767,52 +1801,17 @@
           </p>
 
           <div class="amenities">
-
-            <div class="amenity">
-              <span class="amenity-icon">❄</span>
-              <span>Geladeira frost free com freezer</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">✧</span>
-              <span>Ar-condicionado</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">▣</span>
-              <span>Smart TVs de 32 polegadas</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">⌂</span>
-              <span>Quarto com cama queen e beliche</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">♨</span>
-              <span>Banheiro amplo com chuveiro</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">♨</span>
-              <span>Cozinha e cooktop</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">▤</span>
-              <span>Armários e compartimentos para bagagem</span>
-            </div>
-
-            <div class="amenity">
-              <span class="amenity-icon">☼</span>
-              <span>Área externa com toldo e estrutura de apoio</span>
-            </div>
-
+            <div class="amenity"><span class="amenity-icon">❄</span><span>Geladeira frost free com freezer</span></div>
+            <div class="amenity"><span class="amenity-icon">✧</span><span>Ar-condicionado</span></div>
+            <div class="amenity"><span class="amenity-icon">▣</span><span>Smart TVs de 32 polegadas</span></div>
+            <div class="amenity"><span class="amenity-icon">⌂</span><span>Quarto com cama queen e beliche</span></div>
+            <div class="amenity"><span class="amenity-icon">♨</span><span>Banheiro amplo com chuveiro</span></div>
+            <div class="amenity"><span class="amenity-icon">♨</span><span>Cozinha e cooktop</span></div>
+            <div class="amenity"><span class="amenity-icon">▤</span><span>Armários e compartimentos para bagagem</span></div>
+            <div class="amenity"><span class="amenity-icon">☼</span><span>Área externa com toldo e estrutura de apoio</span></div>
           </div>
 
-          <a href="#contato" class="btn btn-primary">
-            Consultar o motorhome ↗
-          </a>
+          <a href="#contato" class="btn btn-primary">Consultar o motorhome ↗</a>
 
           <p class="motorhome-note">
             Consulte disponibilidade, capacidade autorizada, condições
@@ -1829,11 +1828,7 @@
 
         <div class="driver-copy">
           <span class="eyebrow">Praticidade e comodidade</span>
-
-          <h2>
-            Você escolhe o carro.
-            <span>Nós cuidamos do trajeto.</span>
-          </h2>
+          <h2>Você escolhe o carro. <span>Nós cuidamos do trajeto.</span></h2>
 
           <p>
             Precisa de um motorista para conduzir seu próprio veículo?
@@ -1853,18 +1848,12 @@
             <li><span>✓</span> Valores consultados conforme o serviço</li>
           </ul>
 
-          <a href="#contato" class="btn btn-primary">
-            Consultar motorista particular
-          </a>
+          <a href="#contato" class="btn btn-primary">Consultar motorista particular</a>
         </div>
 
         <div class="driver-panel">
           <h3>Seu deslocamento, do seu jeito.</h3>
-
-          <p>
-            Conte o que precisa, informe o trajeto e consulte
-            as condições para seu atendimento.
-          </p>
+          <p>Conte o que precisa, informe o trajeto e consulte as condições para seu atendimento.</p>
 
           <div class="driver-panel-item">
             <div class="big-icon">⌖</div>
@@ -1897,59 +1886,32 @@
     <!-- TURISMO -->
     <section class="section section-soft" id="turismo">
       <div class="container">
-
         <div class="section-heading">
           <span class="eyebrow">Turismo e experiências</span>
-
-          <h2>
-            O próximo destino
-            <span>começa aqui.</span>
-          </h2>
-
-          <p>
-            Consulte opções de transporte e apoio para organizar
-            sua próxima experiência de viagem.
-          </p>
+          <h2>O próximo destino <span>começa aqui.</span></h2>
+          <p>Consulte opções de transporte e apoio para organizar sua próxima experiência de viagem.</p>
         </div>
 
         <div class="tour-grid">
 
           <article class="tour-card">
             <div class="tour-icon">✈</div>
-
             <h3>Viagens e traslados</h3>
-
-            <p>
-              Transporte para aeroportos, hotéis, compromissos,
-              eventos e destinos combinados.
-            </p>
-
+            <p>Transporte para aeroportos, hotéis, compromissos, eventos e destinos combinados.</p>
             <a href="#contato" class="text-link">Consultar serviço ↗</a>
           </article>
 
           <article class="tour-card">
             <div class="tour-icon">⌖</div>
-
             <h3>Excursões e passeios</h3>
-
-            <p>
-              Consulte transporte para passeios, grupos,
-              viagens de lazer e destinos turísticos.
-            </p>
-
+            <p>Consulte transporte para passeios, grupos, viagens de lazer e destinos turísticos.</p>
             <a href="#contato" class="text-link">Planejar viagem ↗</a>
           </article>
 
           <article class="tour-card">
             <div class="tour-icon">♧</div>
-
             <h3>Pacotes turísticos</h3>
-
-            <p>
-              Consulte disponibilidade de pacotes, hospedagens,
-              cruzeiros e opções para organizar sua viagem.
-            </p>
-
+            <p>Consulte disponibilidade de pacotes, hospedagens, cruzeiros e opções para organizar sua viagem.</p>
             <a href="#contato" class="text-link">Solicitar informações ↗</a>
           </article>
 
@@ -1960,16 +1922,11 @@
     <!-- CHAMADA PARA ORÇAMENTO -->
     <section class="cta-band">
       <div class="container cta-inner">
-
         <div>
           <h2>Já sabe para onde vai? Vamos planejar seu transporte.</h2>
           <p>Entre em contato e consulte as opções para sua viagem.</p>
         </div>
-
-        <a href="#contato" class="btn">
-          Pedir orçamento agora ↗
-        </a>
-
+        <a href="#contato" class="btn">Pedir orçamento agora ↗</a>
       </div>
     </section>
 
@@ -1979,11 +1936,7 @@
 
         <div class="contact-copy">
           <span class="eyebrow">Fale conosco</span>
-
-          <h2>
-            Vamos conversar sobre
-            <span>sua próxima viagem?</span>
-          </h2>
+          <h2>Vamos conversar sobre <span>sua próxima viagem?</span></h2>
 
           <p>
             Preencha os dados e envie sua solicitação diretamente
@@ -1992,14 +1945,11 @@
           </p>
 
           <div class="contact-details">
-
             <div class="contact-detail">
               <div class="contact-icon">☎</div>
               <div>
                 <strong>Telefone e WhatsApp</strong>
-                <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">
-                  (15) 99668-8359
-                </a>
+                <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">(15) 99668-8359</a>
               </div>
             </div>
 
@@ -2007,9 +1957,7 @@
               <div class="contact-icon">◎</div>
               <div>
                 <strong>Instagram</strong>
-                <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">
-                  @viacaolbl
-                </a>
+                <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">@viacaolbl</a>
               </div>
             </div>
 
@@ -2020,38 +1968,26 @@
                 <span>Itapetininga, região, Grande São Paulo e Brasil, sob consulta.</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <form class="contact-form" id="quoteForm">
           <h3>Solicite seu orçamento</h3>
-
-          <p>
-            Informe os detalhes da viagem para preparar sua solicitação.
-          </p>
+          <p>Informe os detalhes da viagem para preparar sua solicitação.</p>
 
           <div class="form-grid">
 
             <div class="field">
               <label for="name">Seu nome *</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
+              <input id="name" name="name" type="text"
                 placeholder="Como podemos chamar você?"
-                autocomplete="name"
-                required>
+                autocomplete="name" required>
             </div>
 
             <div class="field">
               <label for="phone">Seu telefone</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="(15) 99999-9999"
-                autocomplete="tel">
+              <input id="phone" name="phone" type="tel"
+                placeholder="(15) 99999-9999" autocomplete="tel">
             </div>
 
             <div class="field full">
@@ -2072,48 +2008,30 @@
 
             <div class="field">
               <label for="origin">Cidade de origem *</label>
-              <input
-                id="origin"
-                name="origin"
-                type="text"
-                placeholder="De onde você sai?"
-                required>
+              <input id="origin" name="origin" type="text"
+                placeholder="De onde você sai?" required>
             </div>
 
             <div class="field">
               <label for="destination">Destino *</label>
-              <input
-                id="destination"
-                name="destination"
-                type="text"
-                placeholder="Para onde vai?"
-                required>
+              <input id="destination" name="destination" type="text"
+                placeholder="Para onde vai?" required>
             </div>
 
             <div class="field">
               <label for="date">Data da viagem</label>
-              <input
-                id="date"
-                name="date"
-                type="date">
+              <input id="date" name="date" type="date">
             </div>
 
             <div class="field">
               <label for="passengers">Número de passageiros</label>
-              <input
-                id="passengers"
-                name="passengers"
-                type="number"
-                min="1"
-                max="1000"
-                placeholder="Ex.: 15">
+              <input id="passengers" name="passengers" type="number"
+                min="1" max="1000" placeholder="Ex.: 15">
             </div>
 
             <div class="field full">
               <label for="details">Informações adicionais</label>
-              <textarea
-                id="details"
-                name="details"
+              <textarea id="details" name="details"
                 placeholder="Conte mais sobre sua viagem, horários, retorno ou necessidades especiais."></textarea>
             </div>
 
@@ -2141,11 +2059,7 @@
 
         <div class="footer-brand">
           <a href="#inicio" class="brand">
-            <img
-              class="brand-logo"
-              src="logo.png"
-              alt="Logotipo Viação LBL">
-
+            <img class="brand-logo" src="./logo.png" alt="Logotipo Viação LBL">
             <span class="brand-copy">
               <strong>VIAÇÃO LBL</strong>
               <span>Transportes Executivos</span>
@@ -2158,18 +2072,15 @@
             turismo e compromissos profissionais.
           </p>
 
-          <a
-            class="footer-social"
+          <a class="footer-social"
             href="https://www.instagram.com/viacaolbl/"
-            target="_blank"
-            rel="noopener noreferrer">
+            target="_blank" rel="noopener noreferrer">
             Instagram: @viacaolbl ↗
           </a>
         </div>
 
         <div class="footer-column">
           <h4>Navegação</h4>
-
           <div class="footer-links">
             <a href="#inicio">Início</a>
             <a href="#empresa">A empresa</a>
@@ -2182,16 +2093,9 @@
 
         <div class="footer-column">
           <h4>Entre em contato</h4>
-
           <div class="footer-links">
-            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">
-              WhatsApp: (15) 99668-8359
-            </a>
-
-            <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-
+            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">WhatsApp: (15) 99668-8359</a>
+            <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="#contato">Solicitar orçamento</a>
           </div>
         </div>
@@ -2199,11 +2103,7 @@
       </div>
 
       <div class="footer-bottom">
-        <span>
-          © <span id="currentYear"></span>
-          <strong>Viação LBL</strong>. Todos os direitos reservados.
-        </span>
-
+        <span>© <span id="currentYear"></span> <strong>Viação LBL</strong>. Todos os direitos reservados.</span>
         <span>Transporte executivo • Fretamento • Turismo</span>
       </div>
 
@@ -2211,28 +2111,19 @@
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
-  <a
-    class="whatsapp-float"
+  <a class="whatsapp-float"
     href="https://wa.me/5515996688359?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Fale conosco pelo WhatsApp"
     title="Fale conosco pelo WhatsApp">
-    <svg
-      width="29"
-      height="29"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true">
-      <path
-        d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.6Z"
-        stroke="currentColor"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-      <path
-        d="M8.8 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4-.1.6.6 1 1.4 1.8 2.4 2.3.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1-.2-2.2-.7-3.5-1.8-1.1-1-2-2.2-2.3-3.3-.3-1 .1-1.9.7-2.8Z"
+
+    <svg width="29" height="29" viewBox="0 0 24 24"
+      fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.6Z"
+        stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8.8 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4-.1.6.6 1 1.4 1.8 2.4 2.3.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1-.2-2.2-.7-3.5-1.8-1.1-1-2-2.2-2.3-3.3-.3-1 .1-1.9.7-2.8Z"
         fill="currentColor"/>
     </svg>
   </a>
@@ -2262,7 +2153,6 @@
         "aria-label",
         isOpen ? "Fechar menu" : "Abrir menu"
       );
-
       menuToggle.textContent = isOpen ? "✕" : "☰";
       document.body.classList.toggle("menu-open", isOpen);
     });
@@ -2305,7 +2195,9 @@
         "Serviço: " + service,
         "Origem: " + origin,
         "Destino: " + destination,
-        "Data: " + (date ? date.split("-").reverse().join("/") : "A combinar"),
+        "Data: " + (
+          date ? date.split("-").reverse().join("/") : "A combinar"
+        ),
         "Passageiros: " + (passengers || "A confirmar"),
         "",
         "*INFORMAÇÕES ADICIONAIS*",
@@ -2320,6 +2212,176 @@
 
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
     });
+
+    // CARROSSEL DE FOTOS — QUEM SOMOS
+    (function () {
+      const carousel = document.getElementById("aboutCarousel");
+
+      if (!carousel) return;
+
+      const slides = Array.from(
+        carousel.querySelectorAll(".about-carousel-slide")
+      );
+
+      const prevButton = document.getElementById("aboutCarouselPrev");
+      const nextButton = document.getElementById("aboutCarouselNext");
+      const counter = document.getElementById("aboutCarouselCounter");
+      const dotsContainer = document.getElementById("aboutCarouselDots");
+
+      if (
+        !slides.length ||
+        !prevButton ||
+        !nextButton ||
+        !counter ||
+        !dotsContainer
+      ) {
+        return;
+      }
+
+      let currentIndex = 0;
+      let autoplay = null;
+
+      // CRIA OS INDICADORES AUTOMATICAMENTE
+      slides.forEach(function (_, index) {
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+        dot.className = "about-carousel-dot";
+        dot.setAttribute("aria-label", "Ver foto " + (index + 1));
+
+        dot.addEventListener("click", function () {
+          showSlide(index);
+          restartAutoplay();
+        });
+
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(
+        dotsContainer.querySelectorAll(".about-carousel-dot")
+      );
+
+      // MOSTRA A FOTO ESCOLHIDA
+      function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach(function (slide, i) {
+          const isActive = i === currentIndex;
+
+          slide.classList.toggle("active", isActive);
+          slide.setAttribute("aria-hidden", String(!isActive));
+
+          if (isActive) {
+            const image = slide.querySelector("img");
+
+            if (image) {
+              image.loading = "eager";
+            }
+          }
+        });
+
+        dots.forEach(function (dot, i) {
+          const isActive = i === currentIndex;
+
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+
+        counter.textContent =
+          "Foto " + (currentIndex + 1) + " de " + slides.length;
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function previousSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      // TROCA AUTOMÁTICA A CADA 4 SEGUNDOS
+      function stopAutoplay() {
+        if (autoplay !== null) {
+          clearInterval(autoplay);
+          autoplay = null;
+        }
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+
+        if (
+          !document.hidden &&
+          !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          autoplay = setInterval(nextSlide, 4000);
+        }
+      }
+
+      function restartAutoplay() {
+        startAutoplay();
+      }
+
+      // SETAS
+      nextButton.addEventListener("click", function () {
+        nextSlide();
+        restartAutoplay();
+      });
+
+      prevButton.addEventListener("click", function () {
+        previousSlide();
+        restartAutoplay();
+      });
+
+      // PAUSA QUANDO O MOUSE ESTÁ SOBRE A GALERIA
+      carousel.addEventListener("mouseenter", stopAutoplay);
+      carousel.addEventListener("mouseleave", startAutoplay);
+      carousel.addEventListener("focusin", stopAutoplay);
+      carousel.addEventListener("focusout", startAutoplay);
+
+      // PAUSA QUANDO A ABA NÃO ESTÁ VISÍVEL
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          stopAutoplay();
+        } else {
+          startAutoplay();
+        }
+      });
+
+      // SUPORTE A DESLIZAR A FOTO NO CELULAR
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      carousel.addEventListener("touchstart", function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", function (event) {
+        const touchEndX = event.changedTouches[0].screenX;
+        const touchEndY = event.changedTouches[0].screenY;
+
+        const differenceX = touchEndX - touchStartX;
+        const differenceY = touchEndY - touchStartY;
+
+        if (
+          Math.abs(differenceX) > 50 &&
+          Math.abs(differenceX) > Math.abs(differenceY)
+        ) {
+          if (differenceX < 0) {
+            nextSlide();
+          } else {
+            previousSlide();
+          }
+
+          restartAutoplay();
+        }
+      }, { passive: true });
+
+      // INICIA NA PRIMEIRA FOTO
+      showSlide(0);
+      startAutoplay();
+    })();
   </script>
 
 </body>
