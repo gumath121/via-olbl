@@ -601,6 +601,36 @@
       background: #208451;
     }
 
+    /* PERSONALIZAÇÃO DA AGÊNCIA: FUNDO E LOGOTIPO */
+
+    #agencia .agency-banner {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.91) 0%,
+          rgba(0, 0, 0, 0.76) 52%,
+          rgba(0, 0, 0, 0.68) 100%
+        ),
+        url("./banneragencia.jpg") center center / cover no-repeat;
+    }
+
+    #agencia .agency-visual {
+      background: rgba(0, 0, 0, 0.48);
+      backdrop-filter: blur(2px);
+    }
+
+    #agencia .agency-logo-image {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 8px;
+      filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.5));
+    }
+
     /* QUEM SOMOS */
 
     .about-grid {
@@ -1809,6 +1839,13 @@
         right: 15px;
         bottom: 15px;
       }
+
+      /* LOGOTIPO DA AGÊNCIA NO MOBILE */
+
+      #agencia .agency-logo-image {
+        max-width: 240px;
+        max-height: 180px;
+      }
     }
 
     @media (max-width: 380px) {
@@ -2046,7 +2083,7 @@
       </div>
     </section>
 
-    <!-- AGÊNCIA DE VIAGENS LBL — NOVA SEÇÃO -->
+    <!-- AGÊNCIA DE VIAGENS LBL -->
     <section class="travel-agency-section" id="agencia">
       <div class="container">
         <div class="agency-banner">
@@ -2079,9 +2116,18 @@
               </a>
             </div>
 
-            <div class="agency-visual" aria-label="Avião, cruzeiros e destinos turísticos">
-              <div class="agency-plane" aria-hidden="true">✈</div>
-              <div class="agency-visual-caption">Novos destinos. Novas experiências.</div>
+            <!-- LOGOTIPO DA AGÊNCIA NO LUGAR DO AVIÃO -->
+            <div class="agency-visual" aria-label="Logotipo da Agência de Viagens LBL">
+              <img
+                class="agency-logo-image"
+                src="./logoagencia.png"
+                alt="Logotipo da Agência de Viagens LBL"
+                loading="lazy"
+              >
+
+              <div class="agency-visual-caption">
+                Novos destinos. Novas experiências.
+              </div>
 
               <div class="agency-travel-icons">
                 <span><b>✈</b> Voos</span>
