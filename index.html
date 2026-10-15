@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viação LBL | Transporte Executivo, Turismo e Fretamento</title>
-  <meta name="description" content="Viação LBL e Leandro & Recanto Transportes Executivos. Transporte executivo, turismo, fretamento e viagens em Itapetininga, região, Grande São Paulo e todo o Brasil.">
+  <title>Viação LBL | Transporte Executivo, Turismo e Agência de Viagens</title>
+  <meta name="description" content="Viação LBL e Agência de Viagens LBL. Transporte executivo, fretamento, voos nacionais e internacionais, cruzeiros, hospedagens, excursões e pacotes turísticos.">
   <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -320,6 +321,284 @@
     .trust-item span {
       color: var(--muted);
       font-size: 11px;
+    }
+
+    /* AGÊNCIA DE VIAGENS LBL */
+
+    .travel-agency-section {
+      padding: 80px 0;
+      background:
+        radial-gradient(ellipse at 85% 15%, rgba(198,40,54,.15), transparent 42%),
+        linear-gradient(180deg, #090909, #000);
+      border-top: 1px solid #252525;
+      border-bottom: 1px solid #292929;
+      overflow: hidden;
+    }
+
+    .agency-banner {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 55px;
+      border: 1px solid #444;
+      border-radius: 18px;
+      background:
+        linear-gradient(110deg, rgba(0,0,0,.99) 0%, rgba(8,8,8,.97) 46%, rgba(25,9,12,.92) 100%);
+      box-shadow: 0 25px 75px rgba(0,0,0,.35);
+    }
+
+    .agency-banner::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 470px;
+      height: 470px;
+      right: -120px;
+      top: -160px;
+      border: 1px solid rgba(192,192,192,.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(192,192,192,.035),
+        0 0 0 75px rgba(198,40,54,.055),
+        0 0 0 120px rgba(192,192,192,.025);
+    }
+
+    .agency-banner::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #777, var(--red), #eee, var(--red));
+    }
+
+    .agency-topline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .agency-topline::before {
+      content: "";
+      display: block;
+      width: 35px;
+      height: 3px;
+      background: var(--red);
+    }
+
+    .agency-topline span {
+      color: var(--silver);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .agency-banner-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      align-items: center;
+      gap: 35px;
+    }
+
+    .agency-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .agency-copy h2 {
+      max-width: 680px;
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      margin-bottom: 22px;
+    }
+
+    .agency-copy h2 span {
+      color: var(--red);
+    }
+
+    .agency-copy > p {
+      max-width: 600px;
+      color: #bcbcbc;
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 25px;
+    }
+
+    .agency-tagline {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #eee;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .agency-visual {
+      min-height: 310px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 25px;
+      border: 1px solid rgba(192,192,192,.22);
+      border-radius: 14px;
+      background:
+        radial-gradient(ellipse at center, rgba(198,40,54,.15), transparent 65%),
+        linear-gradient(145deg, rgba(255,255,255,.035), rgba(0,0,0,.2));
+    }
+
+    .agency-visual::before,
+    .agency-visual::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(192,192,192,.17);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .agency-visual::before {
+      width: 220px;
+      height: 220px;
+    }
+
+    .agency-visual::after {
+      width: 275px;
+      height: 275px;
+      border-style: dashed;
+      opacity: .6;
+    }
+
+    .agency-plane {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(65px, 8vw, 100px);
+      line-height: 1.2;
+      filter: grayscale(1);
+      transform: rotate(-8deg);
+      text-shadow: 0 8px 35px rgba(198,40,54,.25);
+    }
+
+    .agency-visual-caption {
+      position: relative;
+      z-index: 1;
+      color: #e2e2e2;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .agency-travel-icons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .agency-travel-icons span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 12px;
+      border: 1px solid #414141;
+      border-radius: 5px;
+      background: rgba(0,0,0,.72);
+      color: #ddd;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .agency-travel-icons b {
+      color: var(--red);
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .agency-services {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .agency-service {
+      min-width: 0;
+      padding: 19px 15px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid #333;
+      border-radius: 9px;
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+
+    .agency-service:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+      background: rgba(198,40,54,.06);
+    }
+
+    .agency-service-icon {
+      display: block;
+      color: var(--red);
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .agency-service h3 {
+      color: #f5f5f5;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 7px;
+    }
+
+    .agency-service p {
+      color: #999;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .agency-contact-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid #333;
+    }
+
+    .agency-contact-copy strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .agency-contact-copy span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .agency-whatsapp-btn {
+      flex-shrink: 0;
+      background: #176b42;
+      color: #fff;
+      border: 1px solid #278755;
+    }
+
+    .agency-whatsapp-btn:hover {
+      background: #208451;
     }
 
     /* QUEM SOMOS */
@@ -1090,6 +1369,26 @@
       color: var(--red);
     }
 
+    .footer-company {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #292929;
+    }
+
+    .footer-company strong {
+      display: block;
+      color: #e5e5e5;
+      font-size: 11px;
+      line-height: 1.8;
+      margin-bottom: 5px;
+    }
+
+    .footer-company span {
+      display: block;
+      color: #999;
+      font-size: 11px;
+    }
+
     .footer-column h4 {
       font-size: 12px;
       margin-bottom: 18px;
@@ -1113,6 +1412,11 @@
       color: var(--red);
     }
 
+    .footer-links .agency-footer-link {
+      color: #e5e5e5;
+      font-weight: 700;
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -1128,7 +1432,7 @@
       font-weight: 700;
     }
 
-    /* BOTÃO WHATSAPP */
+    /* BOTÃO WHATSAPP FLUTUANTE — TRANSPORTE */
 
     .whatsapp-float {
       position: fixed;
@@ -1174,6 +1478,14 @@
 
       .footer-main {
         gap: 30px;
+      }
+
+      .agency-banner {
+        padding: 38px;
+      }
+
+      .agency-services {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -1293,6 +1605,88 @@
 
       .trust-item span {
         font-size: 10px;
+      }
+
+      /* AGÊNCIA NO MOBILE */
+
+      .travel-agency-section {
+        padding: 55px 0;
+      }
+
+      .agency-banner {
+        padding: 28px 20px;
+        border-radius: 12px;
+      }
+
+      .agency-banner-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+      }
+
+      .agency-copy h2 {
+        font-size: clamp(34px, 9vw, 47px);
+        letter-spacing: -1px;
+      }
+
+      .agency-copy > p {
+        font-size: 13px;
+      }
+
+      .agency-topline span {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .agency-visual {
+        min-height: 270px;
+        padding: 20px 10px;
+      }
+
+      .agency-visual::before {
+        width: 185px;
+        height: 185px;
+      }
+
+      .agency-visual::after {
+        width: 230px;
+        height: 230px;
+      }
+
+      .agency-plane {
+        font-size: 76px;
+      }
+
+      .agency-travel-icons {
+        gap: 7px;
+      }
+
+      .agency-travel-icons span {
+        padding: 8px 9px;
+        font-size: 9px;
+      }
+
+      .agency-services {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .agency-service {
+        padding: 16px 12px;
+      }
+
+      .agency-service h3 {
+        font-size: 11px;
+      }
+
+      .agency-contact-bar {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 17px;
+      }
+
+      .agency-whatsapp-btn {
+        width: 100%;
       }
 
       .about-grid,
@@ -1441,6 +1835,10 @@
       .about-carousel-track {
         height: 250px;
       }
+
+      .agency-services {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1476,8 +1874,9 @@
 
       <nav class="nav-links" id="mainNav" aria-label="Menu principal">
         <a href="#inicio">Início</a>
-        <a href="#empresa">A empresa</a>
         <a href="#frota">Nossa frota</a>
+        <a href="#agencia">Agência de viagens</a>
+        <a href="#empresa">Quem somos</a>
         <a href="#motorhome">Motorhome</a>
         <a href="#motorista">Motorista particular</a>
         <a href="#turismo">Turismo</a>
@@ -1488,7 +1887,7 @@
 
   <main>
 
-    <!-- BANNER -->
+    <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio" aria-label="Viação LBL">
       <picture>
         <source media="(max-width: 700px)" srcset="./bannermobile.png">
@@ -1642,6 +2041,106 @@
               <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
           </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AGÊNCIA DE VIAGENS LBL — NOVA SEÇÃO -->
+    <section class="travel-agency-section" id="agencia">
+      <div class="container">
+        <div class="agency-banner">
+
+          <div class="agency-topline">
+            <span>Agência de Viagens LBL</span>
+          </div>
+
+          <div class="agency-banner-grid">
+
+            <div class="agency-copy">
+              <span class="agency-tagline">Seu próximo destino começa aqui</span>
+
+              <h2>O mundo é seu.<br><span>Vamos planejar?</span></h2>
+
+              <p>
+                Da sua próxima viagem de avião à experiência de um cruzeiro,
+                ajudamos você a encontrar opções para viajar, descansar e
+                conhecer novos destinos. Consulte nossos serviços e planeje
+                sua próxima experiência com a Agência de Viagens LBL.
+              </p>
+
+              <a
+                href="https://wa.me/5515996154384?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Viação%20LBL%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20viagens."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Planejar minha viagem ↗
+              </a>
+            </div>
+
+            <div class="agency-visual" aria-label="Avião, cruzeiros e destinos turísticos">
+              <div class="agency-plane" aria-hidden="true">✈</div>
+              <div class="agency-visual-caption">Novos destinos. Novas experiências.</div>
+
+              <div class="agency-travel-icons">
+                <span><b>✈</b> Voos</span>
+                <span><b>♧</b> Cruzeiros</span>
+                <span><b>⌖</b> Destinos</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="agency-services">
+
+            <article class="agency-service">
+              <span class="agency-service-icon" aria-hidden="true">✈</span>
+              <h3>Voos nacionais e internacionais</h3>
+              <p>Consulte opções de voos para destinos no Brasil e no exterior.</p>
+            </article>
+
+            <article class="agency-service">
+              <span class="agency-service-icon" aria-hidden="true">♧</span>
+              <h3>Cruzeiros nacionais e internacionais</h3>
+              <p>Conheça opções de roteiros e experiências em alto-mar.</p>
+            </article>
+
+            <article class="agency-service">
+              <span class="agency-service-icon" aria-hidden="true">⌂</span>
+              <h3>Hospedagens</h3>
+              <p>Consulte alternativas de hospedagem para sua viagem.</p>
+            </article>
+
+            <article class="agency-service">
+              <span class="agency-service-icon" aria-hidden="true">▣</span>
+              <h3>Excursões com pernoite</h3>
+              <p>Planeje passeios e excursões com hospedagem no destino.</p>
+            </article>
+
+            <article class="agency-service">
+              <span class="agency-service-icon" aria-hidden="true">⌖</span>
+              <h3>Pacotes turísticos</h3>
+              <p>Consulte opções para organizar sua próxima experiência.</p>
+            </article>
+
+          </div>
+
+          <div class="agency-contact-bar">
+            <div class="agency-contact-copy">
+              <strong>Vamos encontrar sua próxima viagem?</strong>
+              <span>Fale diretamente com a Agência de Viagens LBL pelo WhatsApp.</span>
+            </div>
+
+            <a
+              href="https://wa.me/5515996154384?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Ag%C3%AAncia%20de%20Viagens%20LBL."
+              class="btn agency-whatsapp-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp da Agência ↗
+            </a>
+          </div>
 
         </div>
       </div>
@@ -1883,7 +2382,7 @@
       </div>
     </section>
 
-    <!-- TURISMO -->
+    <!-- TURISMO E EXCURSÕES -->
     <section class="section section-soft" id="turismo">
       <div class="container">
         <div class="section-heading">
@@ -1906,24 +2405,23 @@
             <h3>Excursões e passeios</h3>
             <p>Consulte transporte para passeios, grupos, viagens de lazer e destinos turísticos.</p>
 
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;">
               <a href="#contato" class="text-link">Planejar viagem ↗</a>
               <a
                 href="https://excursaoviacaolbl.manus.space/"
                 class="btn btn-primary"
                 target="_blank"
                 rel="noopener noreferrer"
-                style="padding: 10px 14px; min-height: 40px; font-size: 11px;"
+                style="padding:10px 14px;min-height:40px;font-size:11px;"
               >Excursões Programadas ↗</a>
             </div>
           </article>
-```
 
           <article class="tour-card">
             <div class="tour-icon">♧</div>
             <h3>Pacotes turísticos</h3>
             <p>Consulte disponibilidade de pacotes, hospedagens, cruzeiros e opções para organizar sua viagem.</p>
-            <a href="#contato" class="text-link">Solicitar informações ↗</a>
+            <a href="#agencia" class="text-link">Conhecer a agência ↗</a>
           </article>
 
         </div>
@@ -1941,7 +2439,7 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- CONTATO DO TRANSPORTE -->
     <section class="section section-dark" id="contato">
       <div class="container contact-grid">
 
@@ -1951,16 +2449,24 @@
 
           <p>
             Preencha os dados e envie sua solicitação diretamente
-            pelo WhatsApp. Nossa equipe poderá verificar as informações
-            e retornar com as condições do serviço.
+            pelo WhatsApp do transporte. Nossa equipe poderá verificar
+            as informações e retornar com as condições do serviço.
           </p>
 
           <div class="contact-details">
             <div class="contact-detail">
               <div class="contact-icon">☎</div>
               <div>
-                <strong>Telefone e WhatsApp</strong>
+                <strong>WhatsApp — Transporte Executivo</strong>
                 <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">(15) 99668-8359</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">✈</div>
+              <div>
+                <strong>WhatsApp — Agência de Viagens</strong>
+                <a href="https://wa.me/5515996154384" target="_blank" rel="noopener noreferrer">(15) 99615-4384</a>
               </div>
             </div>
 
@@ -1983,7 +2489,7 @@
         </div>
 
         <form class="contact-form" id="quoteForm">
-          <h3>Solicite seu orçamento</h3>
+          <h3>Solicite seu orçamento de transporte</h3>
           <p>Informe os detalhes da viagem para preparar sua solicitação.</p>
 
           <div class="form-grid">
@@ -2053,7 +2559,8 @@
           </button>
 
           <div class="form-note">
-            O formulário abre uma conversa no WhatsApp com os dados informados.
+            Este formulário é destinado a orçamentos de transporte e abre uma conversa no WhatsApp do transporte.
+            Para voos, cruzeiros e hospedagens, fale com a Agência de Viagens LBL.
           </div>
         </form>
 
@@ -2088,26 +2595,33 @@
             target="_blank" rel="noopener noreferrer">
             Instagram: @viacaolbl ↗
           </a>
+
+          <div class="footer-company">
+            <strong>Leandro &amp; Recanto Transportes Executivos LTDA</strong>
+            <span>CNPJ: 38.332.880/0001-76</span>
+          </div>
         </div>
 
         <div class="footer-column">
           <h4>Navegação</h4>
           <div class="footer-links">
             <a href="#inicio">Início</a>
-            <a href="#empresa">A empresa</a>
             <a href="#frota">Nossa frota</a>
+            <a href="#agencia">Agência de viagens</a>
+            <a href="#empresa">Quem somos</a>
             <a href="#motorhome">Motorhome</a>
             <a href="#motorista">Motorista particular</a>
-            <a href="#turismo">Turismo</a>
+            <a href="#turismo">Turismo e excursões</a>
           </div>
         </div>
 
         <div class="footer-column">
           <h4>Entre em contato</h4>
           <div class="footer-links">
-            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">WhatsApp: (15) 99668-8359</a>
-            <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#contato">Solicitar orçamento</a>
+            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">Transporte: (15) 99668-8359</a>
+            <a class="agency-footer-link" href="https://wa.me/5515996154384" target="_blank" rel="noopener noreferrer">Agência: (15) 99615-4384</a>
+            <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">Instagram: @viacaolbl</a>
+            <a href="#contato">Solicitar orçamento de transporte</a>
           </div>
         </div>
 
@@ -2115,19 +2629,19 @@
 
       <div class="footer-bottom">
         <span>© <span id="currentYear"></span> <strong>Viação LBL</strong>. Todos os direitos reservados.</span>
-        <span>Transporte executivo • Fretamento • Turismo</span>
+        <span>Transporte executivo • Fretamento • Turismo • Agência de viagens</span>
       </div>
 
     </div>
   </footer>
 
-  <!-- WHATSAPP FLUTUANTE -->
+  <!-- WHATSAPP FLUTUANTE — TRANSPORTE EXECUTIVO -->
   <a class="whatsapp-float"
-    href="https://wa.me/5515996688359?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    href="https://wa.me/5515996688359?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20transporte%20com%20a%20Viação%20LBL."
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Fale conosco pelo WhatsApp"
-    title="Fale conosco pelo WhatsApp">
+    aria-label="Fale com o transporte executivo pelo WhatsApp"
+    title="WhatsApp do transporte executivo">
 
     <svg width="29" height="29" viewBox="0 0 24 24"
       fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2178,7 +2692,7 @@
       }
     });
 
-    // FORMULÁRIO DE ORÇAMENTO PELO WHATSAPP
+    // FORMULÁRIO DE ORÇAMENTO — WHATSAPP DO TRANSPORTE
     const quoteForm = document.getElementById("quoteForm");
 
     quoteForm.addEventListener("submit", function (event) {
