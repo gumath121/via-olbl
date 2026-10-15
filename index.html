@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viação LBL | Transporte Executivo, Turismo e Fretamento</title>
-  <meta name="description" content="Viação LBL e Leandro & Recanto Transportes Executivos. Transporte executivo, turismo, fretamento e viagens em Itapetininga, região, Grande São Paulo e todo o Brasil.">
+  <meta name="description" content="Viação LBL e Leandro & Recanto Transportes Executivos. Transporte executivo, fretamento, turismo, passagens aéreas, cruzeiros, hospedagens e pacotes turísticos.">
   <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,9 +47,7 @@
       overflow-x: hidden;
     }
 
-    body.menu-open {
-      overflow: hidden;
-    }
+    body.menu-open { overflow: hidden; }
 
     a {
       color: inherit;
@@ -61,26 +59,16 @@
       display: block;
     }
 
-    button, input, select, textarea {
-      font: inherit;
-    }
+    button, input, select, textarea { font: inherit; }
 
     .container {
       width: min(var(--container), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-dark {
-      background: var(--black);
-    }
-
-    .section-soft {
-      background: var(--black-soft);
-    }
+    .section { padding: 90px 0; }
+    .section-dark { background: var(--black); }
+    .section-soft { background: var(--black-soft); }
 
     .section-heading {
       max-width: 760px;
@@ -107,9 +95,7 @@
     }
 
     .section-heading h2 span,
-    .highlight {
-      color: var(--red);
-    }
+    .highlight { color: var(--red); }
 
     .section-heading p {
       color: var(--muted);
@@ -132,18 +118,9 @@
       transition: background .25s, transform .25s, border-color .25s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--red-dark);
-    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red); color: var(--white); }
+    .btn-primary:hover { background: var(--red-dark); }
 
     .btn-outline {
       border-color: var(--silver);
@@ -211,7 +188,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 23px;
+      gap: 18px;
     }
 
     .nav-links > a:not(.btn) {
@@ -221,9 +198,7 @@
       transition: color .2s;
     }
 
-    .nav-links > a:not(.btn):hover {
-      color: var(--red);
-    }
+    .nav-links > a:not(.btn):hover { color: var(--red); }
 
     .nav-cta {
       min-height: 42px;
@@ -245,7 +220,7 @@
       font-size: 24px;
     }
 
-    /* BANNER DESKTOP E MOBILE */
+    /* BANNER PRINCIPAL */
 
     .hero {
       display: block;
@@ -308,9 +283,7 @@
       border-right: 1px solid var(--border);
     }
 
-    .trust-item:last-child {
-      border-right: none;
-    }
+    .trust-item:last-child { border-right: none; }
 
     .trust-item strong {
       display: block;
@@ -321,6 +294,146 @@
     .trust-item span {
       color: var(--muted);
       font-size: 11px;
+    }
+
+    /* AGÊNCIA DE VIAGENS LBL */
+
+    .travel-agency {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 90px 0;
+      background:
+        linear-gradient(100deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.88) 48%, rgba(0,0,0,.72) 100%),
+        url("./agencia-viagens.jpg") center/cover no-repeat,
+        #080808;
+      border-top: 1px solid #292929;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .travel-agency::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -100px;
+      right: -100px;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(198,40,54,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(198,40,54,.04),
+                  0 0 0 70px rgba(198,40,54,.025);
+      pointer-events: none;
+    }
+
+    .travel-agency-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .travel-agency-heading {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .travel-agency-label {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #e04450;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .travel-agency-heading h2 {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.12;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .travel-agency-heading h2 span { color: var(--red); }
+
+    .travel-agency-heading p {
+      max-width: 650px;
+      color: #c3c3c3;
+      font-size: 15px;
+    }
+
+    .travel-agency-services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-bottom: 32px;
+    }
+
+    .travel-service {
+      min-width: 0;
+      min-height: 160px;
+      padding: 23px 20px;
+      background: rgba(15,15,15,.91);
+      border: 1px solid #363636;
+      border-radius: 12px;
+      transition: transform .25s, border-color .25s, background .25s;
+    }
+
+    .travel-service:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+      background: rgba(25,15,16,.97);
+    }
+
+    .travel-service-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      background: rgba(198,40,54,.13);
+      border: 1px solid rgba(198,40,54,.38);
+      color: #f04a58;
+      font-size: 24px;
+    }
+
+    .travel-service h3 {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .travel-service p {
+      color: #aaa;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .travel-agency-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding-top: 26px;
+      border-top: 1px solid #333;
+    }
+
+    .travel-agency-bottom p {
+      max-width: 480px;
+      color: #c0c0c0;
+      font-size: 12px;
+    }
+
+    .travel-agency-bottom .btn { flex-shrink: 0; }
+
+    .travel-agency-bottom .btn svg {
+      width: 19px;
+      height: 19px;
     }
 
     /* QUEM SOMOS */
@@ -350,9 +463,7 @@
       margin-bottom: 20px;
     }
 
-    .about-copy h2 span {
-      color: var(--red);
-    }
+    .about-copy h2 span { color: var(--red); }
 
     .about-copy p {
       color: var(--muted);
@@ -383,7 +494,7 @@
       font-weight: 900;
     }
 
-    /* CARROSSEL DE 17 FOTOS NO LUGAR DO LOGO */
+    /* CARROSSEL DE FOTOS */
 
     .about-carousel {
       position: relative;
@@ -447,13 +558,8 @@
       border-color: var(--red);
     }
 
-    .about-carousel-arrow.prev {
-      left: 12px;
-    }
-
-    .about-carousel-arrow.next {
-      right: 12px;
-    }
+    .about-carousel-arrow.prev { left: 12px; }
+    .about-carousel-arrow.next { right: 12px; }
 
     .about-carousel-footer {
       display: flex;
@@ -540,9 +646,7 @@
       gap: 3px;
     }
 
-    .vehicle-card:hover .vehicle-photo img {
-      transform: scale(1.04);
-    }
+    .vehicle-card:hover .vehicle-photo img { transform: scale(1.04); }
 
     .vehicle-photo::after {
       content: "";
@@ -567,9 +671,7 @@
       text-transform: uppercase;
     }
 
-    .vehicle-body {
-      padding: 23px;
-    }
+    .vehicle-body { padding: 23px; }
 
     .vehicle-body h3 {
       font-size: 17px;
@@ -650,9 +752,7 @@
       margin-bottom: 18px;
     }
 
-    .motorhome-copy h2 span {
-      color: var(--red);
-    }
+    .motorhome-copy h2 span { color: var(--red); }
 
     .motorhome-copy > p {
       color: var(--muted);
@@ -711,9 +811,7 @@
       margin-bottom: 20px;
     }
 
-    .driver-copy h2 span {
-      color: var(--red);
-    }
+    .driver-copy h2 span { color: var(--red); }
 
     .driver-copy p {
       color: var(--muted);
@@ -791,7 +889,7 @@
       font-size: 11px;
     }
 
-    /* TURISMO */
+    /* TURISMO E TRANSPORTE */
 
     .tour-grid {
       display: grid;
@@ -842,9 +940,7 @@
       font-weight: 800;
     }
 
-    .text-link:hover {
-      color: var(--red);
-    }
+    .text-link:hover { color: var(--red); }
 
     /* CHAMADA PARA ORÇAMENTO */
 
@@ -895,9 +991,7 @@
       flex-shrink: 0;
     }
 
-    .cta-inner .btn:hover {
-      background: #202020;
-    }
+    .cta-inner .btn:hover { background: #202020; }
 
     /* CONTATO */
 
@@ -915,9 +1009,7 @@
       font-weight: 900;
     }
 
-    .contact-copy h2 span {
-      color: var(--red);
-    }
+    .contact-copy h2 span { color: var(--red); }
 
     .contact-copy > p {
       color: var(--muted);
@@ -963,9 +1055,7 @@
       overflow-wrap: anywhere;
     }
 
-    .contact-detail a:hover {
-      color: var(--silver);
-    }
+    .contact-detail a:hover { color: var(--silver); }
 
     .contact-form {
       padding: 30px;
@@ -998,9 +1088,7 @@
       min-width: 0;
     }
 
-    .field.full {
-      grid-column: 1 / -1;
-    }
+    .field.full { grid-column: 1 / -1; }
 
     .field label {
       color: #e2e2e2;
@@ -1025,14 +1113,10 @@
 
     .field input:focus,
     .field select:focus,
-    .field textarea:focus {
-      border-color: var(--red);
-    }
+    .field textarea:focus { border-color: var(--red); }
 
     .field input::placeholder,
-    .field textarea::placeholder {
-      color: #777;
-    }
+    .field textarea::placeholder { color: #777; }
 
     .field select option {
       background: #111;
@@ -1070,9 +1154,7 @@
       padding: 55px 0 40px;
     }
 
-    .footer-brand .brand {
-      margin-bottom: 18px;
-    }
+    .footer-brand .brand { margin-bottom: 18px; }
 
     .footer-brand > p {
       max-width: 360px;
@@ -1087,9 +1169,7 @@
       font-weight: 700;
     }
 
-    .footer-social:hover {
-      color: var(--red);
-    }
+    .footer-social:hover { color: var(--red); }
 
     .footer-column h4 {
       font-size: 12px;
@@ -1110,8 +1190,28 @@
       transition: color .2s;
     }
 
-    .footer-links a:hover {
-      color: var(--red);
+    .footer-links a:hover { color: var(--red); }
+
+    .footer-legal {
+      margin: 0 0 25px;
+      padding: 20px;
+      border: 1px solid #292929;
+      border-radius: 8px;
+      background: #0b0b0b;
+      text-align: center;
+    }
+
+    .footer-legal strong {
+      display: block;
+      color: #e8e8e8;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .footer-legal span {
+      color: #999;
+      font-size: 11px;
     }
 
     .footer-bottom {
@@ -1129,7 +1229,7 @@
       font-weight: 700;
     }
 
-    /* BOTÃO WHATSAPP */
+    /* WHATSAPP FLUTUANTE — TRANSPORTE */
 
     .whatsapp-float {
       position: fixed;
@@ -1150,70 +1250,35 @@
       transition: transform .2s;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-    }
+    .whatsapp-float:hover { transform: scale(1.08); }
 
     /* TABLETS */
 
     @media (max-width: 1050px) {
-      .nav-links {
-        gap: 13px;
-      }
-
-      .nav-links > a:not(.btn) {
-        font-size: 10px;
-      }
-
-      .brand-copy strong {
-        font-size: 15px;
-      }
-
-      .fleet-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-main {
-        gap: 30px;
-      }
+      .nav-links { gap: 11px; }
+      .nav-links > a:not(.btn) { font-size: 9px; }
+      .brand-copy strong { font-size: 15px; }
+      .fleet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-main { gap: 30px; }
     }
 
     /* CELULARES */
 
     @media (max-width: 760px) {
-      .container {
-        width: calc(100% - 32px);
-      }
-
-      .section {
-        padding: 65px 0;
-      }
-
-      .header-inner {
-        min-height: 72px;
-      }
+      .container { width: calc(100% - 32px); }
+      .section { padding: 65px 0; }
+      .header-inner { min-height: 72px; }
 
       .brand-logo {
         width: 51px;
         height: 51px;
       }
 
-      .brand {
-        gap: 9px;
-      }
+      .brand { gap: 9px; }
+      .brand-copy strong { font-size: 14px; }
+      .brand-copy span { font-size: 8px; letter-spacing: .5px; }
 
-      .brand-copy strong {
-        font-size: 14px;
-      }
-
-      .brand-copy span {
-        font-size: 8px;
-        letter-spacing: .5px;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
+      .menu-toggle { display: flex; }
 
       .nav-links {
         position: fixed;
@@ -1244,7 +1309,7 @@
       }
 
       .nav-links > a:not(.btn) {
-        padding: 17px 0;
+        padding: 15px 0;
         border-bottom: 1px solid #242424;
         font-size: 13px;
       }
@@ -1254,9 +1319,7 @@
         min-height: 48px;
       }
 
-      .hero-actions-bar {
-        padding: 18px 16px;
-      }
+      .hero-actions-bar { padding: 18px 16px; }
 
       .hero-caption {
         width: 100%;
@@ -1270,31 +1333,58 @@
         max-width: 420px;
       }
 
-      .trust-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
 
       .trust-item {
         border-bottom: 1px solid var(--border);
         padding: 18px 8px;
       }
 
-      .trust-item:nth-child(2) {
-        border-right: none;
-      }
+      .trust-item:nth-child(2) { border-right: none; }
 
       .trust-item:nth-child(3),
-      .trust-item:nth-child(4) {
-        border-bottom: none;
+      .trust-item:nth-child(4) { border-bottom: none; }
+
+      .trust-item strong { font-size: 11px; }
+      .trust-item span { font-size: 10px; }
+
+      .travel-agency {
+        padding: 60px 0;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,.84), rgba(0,0,0,.96) 55%, #050505 100%),
+          url("./agencia-viagens.jpg") center/cover no-repeat,
+          #080808;
       }
 
-      .trust-item strong {
-        font-size: 11px;
+      .travel-agency-heading { margin-bottom: 28px; }
+
+      .travel-agency-heading h2 {
+        font-size: clamp(30px, 8vw, 42px);
+        letter-spacing: -1px;
       }
 
-      .trust-item span {
-        font-size: 10px;
+      .travel-agency-heading p { font-size: 13px; }
+
+      .travel-agency-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
+
+      .travel-service {
+        min-height: 145px;
+        padding: 17px 13px;
+      }
+
+      .travel-service h3 { font-size: 12px; }
+      .travel-service p { font-size: 10px; }
+
+      .travel-agency-bottom {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .travel-agency-bottom .btn { width: 100%; }
 
       .about-grid,
       .motorhome-grid,
@@ -1304,19 +1394,10 @@
         gap: 30px;
       }
 
-      /* GALERIA EM CIMA E TEXTO EMBAIXO NO MOBILE */
+      .about-visual { order: 1; }
+      .about-copy { order: 2; }
 
-      .about-visual {
-        order: 1;
-      }
-
-      .about-copy {
-        order: 2;
-      }
-
-      .about-carousel-track {
-        height: 300px;
-      }
+      .about-carousel-track { height: 300px; }
 
       .about-carousel-arrow {
         width: 38px;
@@ -1324,76 +1405,39 @@
         font-size: 22px;
       }
 
-      .about-carousel-arrow.prev {
-        left: 10px;
-      }
+      .about-carousel-arrow.prev { left: 10px; }
+      .about-carousel-arrow.next { right: 10px; }
 
-      .about-carousel-arrow.next {
-        right: 10px;
-      }
-
-      .about-checks {
-        grid-template-columns: 1fr;
-      }
+      .about-checks { grid-template-columns: 1fr; }
 
       .fleet-grid,
-      .tour-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .tour-grid { grid-template-columns: minmax(0, 1fr); }
 
-      .vehicle-photo {
-        height: 225px;
-      }
+      .vehicle-photo { height: 225px; }
+      .motorhome-art { padding: 10px; }
+      .motorhome-gallery { gap: 8px; }
 
-      .motorhome-art {
-        padding: 10px;
-      }
-
-      .motorhome-gallery {
-        gap: 8px;
-      }
-
-      .motorhome-gallery img {
-        height: 250px;
-      }
+      .motorhome-gallery img { height: 250px; }
 
       .amenities {
         grid-template-columns: 1fr 1fr;
         gap: 9px;
       }
 
-      .amenity {
-        padding: 10px;
-      }
-
-      .driver-panel {
-        padding: 24px;
-      }
-
-      .cta-band {
-        padding: 48px 0;
-      }
+      .amenity { padding: 10px; }
+      .driver-panel { padding: 24px; }
+      .cta-band { padding: 48px 0; }
 
       .cta-inner {
         align-items: stretch;
         flex-direction: column;
       }
 
-      .cta-inner .btn {
-        width: 100%;
-      }
+      .cta-inner .btn { width: 100%; }
 
-      .contact-form {
-        padding: 22px 17px;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
+      .contact-form { padding: 22px 17px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
 
       .footer-main {
         grid-template-columns: 1fr 1fr;
@@ -1401,9 +1445,7 @@
         padding-top: 40px;
       }
 
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
+      .footer-brand { grid-column: 1 / -1; }
 
       .footer-bottom {
         flex-direction: column;
@@ -1419,35 +1461,18 @@
     }
 
     @media (max-width: 380px) {
-      .brand-copy strong {
-        font-size: 12px;
-      }
-
-      .brand-copy span {
-        font-size: 7px;
-      }
-
-      .amenities {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-main {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-brand {
-        grid-column: auto;
-      }
-
-      .about-carousel-track {
-        height: 250px;
-      }
+      .brand-copy strong { font-size: 12px; }
+      .brand-copy span { font-size: 7px; }
+      .amenities { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+      .about-carousel-track { height: 250px; }
+      .travel-agency-services { grid-template-columns: 1fr; }
+      .travel-service { min-height: auto; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
 
       *,
       *::before,
@@ -1482,6 +1507,7 @@
         <a href="#motorhome">Motorhome</a>
         <a href="#motorista">Motorista particular</a>
         <a href="#turismo">Turismo</a>
+        <a href="#agencia-viagens">Agência de Viagens</a>
         <a href="#contato" class="btn btn-primary nav-cta">Solicitar orçamento ↗</a>
       </nav>
     </div>
@@ -1489,7 +1515,7 @@
 
   <main>
 
-    <!-- BANNER -->
+    <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio" aria-label="Viação LBL">
       <picture>
         <source media="(max-width: 700px)" srcset="./bannermobile.png">
@@ -1548,9 +1574,7 @@
               <h3>Citroën C4 Lounge Exclusive</h3>
               <p>Uma opção para deslocamentos particulares, compromissos profissionais e viagens executivas.</p>
               <div class="vehicle-features">
-                <span>Conforto</span>
-                <span>Viagens particulares</span>
-                <span>Executivo</span>
+                <span>Conforto</span><span>Viagens particulares</span><span>Executivo</span>
               </div>
               <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
@@ -1565,9 +1589,7 @@
               <h3>Chevrolet Cruze Sedan LTZ</h3>
               <p>Transporte executivo para compromissos, traslados e trajetos planejados.</p>
               <div class="vehicle-features">
-                <span>Conforto</span>
-                <span>Traslados</span>
-                <span>Viagens</span>
+                <span>Conforto</span><span>Traslados</span><span>Viagens</span>
               </div>
               <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
@@ -1582,9 +1604,7 @@
               <h3>Toyota SW4 SRX</h3>
               <p>Uma alternativa para quem procura espaço e versatilidade em deslocamentos particulares.</p>
               <div class="vehicle-features">
-                <span>Até 7 lugares</span>
-                <span>Espaço</span>
-                <span>Viagens</span>
+                <span>Até 7 lugares</span><span>Espaço</span><span>Viagens</span>
               </div>
               <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
             </div>
@@ -1600,9 +1620,7 @@
               <h3>Vans Executivas</h3>
               <p>Transporte para grupos, empresas, eventos, excursões e deslocamentos programados.</p>
               <div class="vehicle-features">
-                <span>15 passageiros</span>
-                <span>18 passageiros</span>
-                <span>Fretamento</span>
+                <span>15 passageiros</span><span>18 passageiros</span><span>Fretamento</span>
               </div>
               <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
@@ -1618,9 +1636,7 @@
               <h3>Micro-ônibus</h3>
               <p>Uma solução para transportar grupos em passeios, eventos, viagens e fretamentos.</p>
               <div class="vehicle-features">
-                <span>Até 32 passageiros</span>
-                <span>Grupos</span>
-                <span>Excursões</span>
+                <span>Até 32 passageiros</span><span>Grupos</span><span>Excursões</span>
               </div>
               <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
@@ -1636,9 +1652,7 @@
               <h3>Ônibus G7 LD Semileito</h3>
               <p>Opção para viagens e fretamentos de grupos maiores, conforme disponibilidade.</p>
               <div class="vehicle-features">
-                <span>Até 47 passageiros</span>
-                <span>Semileito</span>
-                <span>Longas distâncias</span>
+                <span>Até 47 passageiros</span><span>Semileito</span><span>Longas distâncias</span>
               </div>
               <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
             </div>
@@ -1648,7 +1662,93 @@
       </div>
     </section>
 
-    <!-- QUEM SOMOS: GALERIA À ESQUERDA E TEXTO À DIREITA -->
+    <!-- AGÊNCIA DE VIAGENS LBL: WHATSAPP EXCLUSIVO -->
+    <section class="travel-agency" id="agencia-viagens">
+      <div class="container travel-agency-inner">
+
+        <div class="travel-agency-heading">
+          <span class="travel-agency-label">Agência de Viagens LBL</span>
+          <h2>Sua próxima viagem<br><span>começa aqui.</span></h2>
+          <p>
+            Descubra novos destinos e consulte opções de passagens,
+            hospedagens, cruzeiros, excursões com pernoite e pacotes
+            turísticos. Nossa equipe está pronta para ajudar a planejar
+            sua próxima experiência.
+          </p>
+        </div>
+
+        <div class="travel-agency-services">
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">✈</div>
+            <h3>Voos nacionais e internacionais</h3>
+            <p>Consulte opções de passagens aéreas para sua próxima viagem.</p>
+          </article>
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">🚢</div>
+            <h3>Cruzeiros nacionais e internacionais</h3>
+            <p>Conheça opções de roteiros, destinos e viagens em cruzeiros.</p>
+          </article>
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">⌂</div>
+            <h3>Hospedagens</h3>
+            <p>Consulte opções de hospedagem para aproveitar melhor seu destino.</p>
+          </article>
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">🚌</div>
+            <h3>Excursões com pernoite</h3>
+            <p>Planeje passeios e excursões com opções de estadia.</p>
+          </article>
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">◎</div>
+            <h3>Pacotes turísticos</h3>
+            <p>Consulte pacotes e alternativas para diferentes destinos.</p>
+          </article>
+
+          <article class="travel-service">
+            <div class="travel-service-icon" aria-hidden="true">✧</div>
+            <h3>Viagens personalizadas</h3>
+            <p>Conte seus planos e consulte opções de viagem conforme suas preferências.</p>
+          </article>
+
+        </div>
+
+        <div class="travel-agency-bottom">
+          <p>
+            Está pensando em viajar? Converse diretamente com a equipe
+            da Agência de Viagens LBL para consultar destinos,
+            disponibilidade e condições.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5515996154384?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20Ag%C3%AAncia%20de%20Viagens%20LBL."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Conversar com a Agência de Viagens LBL pelo WhatsApp">
+
+            <svg viewBox="0 0 24 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 11.6a8 8 0 0 1-11.8 7l-4.2 1.1 1.1-4.1A8 8 0 1 1 20 11.6Z"
+                stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.8 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4-.1.6.6 1 1.4 1.8 2.4 2.3.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1-.2-2.2-.7-3.5-1.8-1.1-1-2-2.2-2.3-3.3-.3-1 .1-1.9.7-2.8Z"
+                fill="currentColor"/>
+            </svg>
+
+            Falar com a agência ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+    <!-- FIM AGÊNCIA DE VIAGENS LBL -->
+
+    <!-- QUEM SOMOS -->
     <section class="section section-dark" id="empresa">
       <div class="container">
         <div class="about-grid">
@@ -1656,86 +1756,27 @@
           <div class="about-visual">
             <div class="about-carousel" id="aboutCarousel">
               <div class="about-carousel-track">
-
-                <div class="about-carousel-slide active">
-                  <img src="./FOTO1.jpg" alt="Viação LBL — foto 1" loading="eager">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO2.jpg" alt="Viação LBL — foto 2" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO3.jpg" alt="Viação LBL — foto 3" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO4.jpg" alt="Viação LBL — foto 4" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO5.jpg" alt="Viação LBL — foto 5" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO6.jpg" alt="Viação LBL — foto 6" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO7.jpg" alt="Viação LBL — foto 7" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO8.jpg" alt="Viação LBL — foto 8" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO9.jpg" alt="Viação LBL — foto 9" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO10.jpg" alt="Viação LBL — foto 10" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO11.jpg" alt="Viação LBL — foto 11" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO12.jpg" alt="Viação LBL — foto 12" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO13.jpg" alt="Viação LBL — foto 13" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO14.jpg" alt="Viação LBL — foto 14" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO15.jpg" alt="Viação LBL — foto 15" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO16.jpg" alt="Viação LBL — foto 16" loading="lazy">
-                </div>
-
-                <div class="about-carousel-slide">
-                  <img src="./FOTO17.jpg" alt="Viação LBL — foto 17" loading="lazy">
-                </div>
-
+                <div class="about-carousel-slide active"><img src="./FOTO1.jpg" alt="Viação LBL — foto 1" loading="eager"></div>
+                <div class="about-carousel-slide"><img src="./FOTO2.jpg" alt="Viação LBL — foto 2" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO3.jpg" alt="Viação LBL — foto 3" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO4.jpg" alt="Viação LBL — foto 4" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO5.jpg" alt="Viação LBL — foto 5" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO6.jpg" alt="Viação LBL — foto 6" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO7.jpg" alt="Viação LBL — foto 7" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO8.jpg" alt="Viação LBL — foto 8" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO9.jpg" alt="Viação LBL — foto 9" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO10.jpg" alt="Viação LBL — foto 10" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO11.jpg" alt="Viação LBL — foto 11" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO12.jpg" alt="Viação LBL — foto 12" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO13.jpg" alt="Viação LBL — foto 13" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO14.jpg" alt="Viação LBL — foto 14" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO15.jpg" alt="Viação LBL — foto 15" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO16.jpg" alt="Viação LBL — foto 16" loading="lazy"></div>
+                <div class="about-carousel-slide"><img src="./FOTO17.jpg" alt="Viação LBL — foto 17" loading="lazy"></div>
               </div>
 
-              <button class="about-carousel-arrow prev"
-                id="aboutCarouselPrev"
-                type="button"
-                aria-label="Foto anterior">‹</button>
-
-              <button class="about-carousel-arrow next"
-                id="aboutCarouselNext"
-                type="button"
-                aria-label="Próxima foto">›</button>
+              <button class="about-carousel-arrow prev" id="aboutCarouselPrev" type="button" aria-label="Foto anterior">‹</button>
+              <button class="about-carousel-arrow next" id="aboutCarouselNext" type="button" aria-label="Próxima foto">›</button>
 
               <div class="about-carousel-footer">
                 <span class="about-carousel-counter" id="aboutCarouselCounter">Foto 1 de 17</span>
@@ -1858,33 +1899,24 @@
 
           <div class="driver-panel-item">
             <div class="big-icon">⌖</div>
-            <div>
-              <strong>Destino definido por você</strong>
-              <span>Informe origem e destino no orçamento.</span>
-            </div>
+            <div><strong>Destino definido por você</strong><span>Informe origem e destino no orçamento.</span></div>
           </div>
 
           <div class="driver-panel-item">
             <div class="big-icon">◷</div>
-            <div>
-              <strong>Agendamento prévio</strong>
-              <span>Consulte datas e horários disponíveis.</span>
-            </div>
+            <div><strong>Agendamento prévio</strong><span>Consulte datas e horários disponíveis.</span></div>
           </div>
 
           <div class="driver-panel-item">
             <div class="big-icon">✓</div>
-            <div>
-              <strong>Condições sob consulta</strong>
-              <span>Confirme valores e detalhes antes de contratar.</span>
-            </div>
+            <div><strong>Condições sob consulta</strong><span>Confirme valores e detalhes antes de contratar.</span></div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- TURISMO -->
+    <!-- TURISMO E TRANSPORTE -->
     <section class="section section-soft" id="turismo">
       <div class="container">
         <div class="section-heading">
@@ -1894,7 +1926,6 @@
         </div>
 
         <div class="tour-grid">
-
           <article class="tour-card">
             <div class="tour-icon">✈</div>
             <h3>Viagens e traslados</h3>
@@ -1913,9 +1944,8 @@
             <div class="tour-icon">♧</div>
             <h3>Pacotes turísticos</h3>
             <p>Consulte disponibilidade de pacotes, hospedagens, cruzeiros e opções para organizar sua viagem.</p>
-            <a href="#contato" class="text-link">Solicitar informações ↗</a>
+            <a href="#agencia-viagens" class="text-link">Conhecer a agência ↗</a>
           </article>
-
         </div>
       </div>
     </section>
@@ -1931,7 +1961,7 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- CONTATO DO TRANSPORTE -->
     <section class="section section-dark" id="contato">
       <div class="container contact-grid">
 
@@ -1941,15 +1971,15 @@
 
           <p>
             Preencha os dados e envie sua solicitação diretamente
-            pelo WhatsApp. Nossa equipe poderá verificar as informações
-            e retornar com as condições do serviço.
+            pelo WhatsApp do transporte. Nossa equipe poderá verificar
+            as informações e retornar com as condições do serviço.
           </p>
 
           <div class="contact-details">
             <div class="contact-detail">
               <div class="contact-icon">☎</div>
               <div>
-                <strong>Telefone e WhatsApp</strong>
+                <strong>WhatsApp — Transporte Executivo</strong>
                 <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">(15) 99668-8359</a>
               </div>
             </div>
@@ -1969,6 +1999,15 @@
                 <span>Itapetininga, região, Grande São Paulo e Brasil, sob consulta.</span>
               </div>
             </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon">✈</div>
+              <div>
+                <strong>Agência de Viagens LBL</strong>
+                <span>Para passagens, hospedagens, cruzeiros e pacotes, utilize o WhatsApp exclusivo da agência.</span>
+                <a href="https://wa.me/5515996154384" target="_blank" rel="noopener noreferrer">Falar com a agência: (15) 99615-4384 ↗</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1977,18 +2016,14 @@
           <p>Informe os detalhes da viagem para preparar sua solicitação.</p>
 
           <div class="form-grid">
-
             <div class="field">
               <label for="name">Seu nome *</label>
-              <input id="name" name="name" type="text"
-                placeholder="Como podemos chamar você?"
-                autocomplete="name" required>
+              <input id="name" name="name" type="text" placeholder="Como podemos chamar você?" autocomplete="name" required>
             </div>
 
             <div class="field">
               <label for="phone">Seu telefone</label>
-              <input id="phone" name="phone" type="tel"
-                placeholder="(15) 99999-9999" autocomplete="tel">
+              <input id="phone" name="phone" type="tel" placeholder="(15) 99999-9999" autocomplete="tel">
             </div>
 
             <div class="field full">
@@ -2009,14 +2044,12 @@
 
             <div class="field">
               <label for="origin">Cidade de origem *</label>
-              <input id="origin" name="origin" type="text"
-                placeholder="De onde você sai?" required>
+              <input id="origin" name="origin" type="text" placeholder="De onde você sai?" required>
             </div>
 
             <div class="field">
               <label for="destination">Destino *</label>
-              <input id="destination" name="destination" type="text"
-                placeholder="Para onde vai?" required>
+              <input id="destination" name="destination" type="text" placeholder="Para onde vai?" required>
             </div>
 
             <div class="field">
@@ -2026,16 +2059,13 @@
 
             <div class="field">
               <label for="passengers">Número de passageiros</label>
-              <input id="passengers" name="passengers" type="number"
-                min="1" max="1000" placeholder="Ex.: 15">
+              <input id="passengers" name="passengers" type="number" min="1" max="1000" placeholder="Ex.: 15">
             </div>
 
             <div class="field full">
               <label for="details">Informações adicionais</label>
-              <textarea id="details" name="details"
-                placeholder="Conte mais sobre sua viagem, horários, retorno ou necessidades especiais."></textarea>
+              <textarea id="details" name="details" placeholder="Conte mais sobre sua viagem, horários, retorno ou necessidades especiais."></textarea>
             </div>
-
           </div>
 
           <button type="submit" class="btn btn-primary form-submit">
@@ -2043,7 +2073,7 @@
           </button>
 
           <div class="form-note">
-            O formulário abre uma conversa no WhatsApp com os dados informados.
+            O formulário abre uma conversa no WhatsApp do transporte com os dados informados.
           </div>
         </form>
 
@@ -2089,18 +2119,26 @@
             <a href="#motorhome">Motorhome</a>
             <a href="#motorista">Motorista particular</a>
             <a href="#turismo">Turismo</a>
+            <a href="#agencia-viagens">Agência de Viagens</a>
           </div>
         </div>
 
         <div class="footer-column">
           <h4>Entre em contato</h4>
           <div class="footer-links">
-            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">WhatsApp: (15) 99668-8359</a>
+            <a href="https://wa.me/5515996688359" target="_blank" rel="noopener noreferrer">Transporte: (15) 99668-8359</a>
+            <a href="https://wa.me/5515996154384" target="_blank" rel="noopener noreferrer">Agência: (15) 99615-4384</a>
             <a href="https://www.instagram.com/viacaolbl/" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="#contato">Solicitar orçamento</a>
           </div>
         </div>
 
+      </div>
+
+      <!-- DADOS DA EMPRESA -->
+      <div class="footer-legal">
+        <strong>Leandro &amp; Recanto Transportes Executivos LTDA</strong>
+        <span>CNPJ: 38.332.880/0001-76</span>
       </div>
 
       <div class="footer-bottom">
@@ -2111,13 +2149,13 @@
     </div>
   </footer>
 
-  <!-- WHATSAPP FLUTUANTE -->
+  <!-- WHATSAPP FLUTUANTE: TRANSPORTE EXECUTIVO -->
   <a class="whatsapp-float"
     href="https://wa.me/5515996688359?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Fale conosco pelo WhatsApp"
-    title="Fale conosco pelo WhatsApp">
+    aria-label="Fale conosco pelo WhatsApp do transporte"
+    title="WhatsApp do transporte">
 
     <svg width="29" height="29" viewBox="0 0 24 24"
       fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -2163,12 +2201,10 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 760) {
-        closeMenu();
-      }
+      if (window.innerWidth > 760) closeMenu();
     });
 
-    // FORMULÁRIO DE ORÇAMENTO PELO WHATSAPP
+    // FORMULÁRIO DE ORÇAMENTO: WHATSAPP DO TRANSPORTE
     const quoteForm = document.getElementById("quoteForm");
 
     quoteForm.addEventListener("submit", function (event) {
@@ -2217,7 +2253,6 @@
     // CARROSSEL DE FOTOS — QUEM SOMOS
     (function () {
       const carousel = document.getElementById("aboutCarousel");
-
       if (!carousel) return;
 
       const slides = Array.from(
@@ -2229,23 +2264,14 @@
       const counter = document.getElementById("aboutCarouselCounter");
       const dotsContainer = document.getElementById("aboutCarouselDots");
 
-      if (
-        !slides.length ||
-        !prevButton ||
-        !nextButton ||
-        !counter ||
-        !dotsContainer
-      ) {
-        return;
-      }
+      if (!slides.length || !prevButton || !nextButton ||
+          !counter || !dotsContainer) return;
 
       let currentIndex = 0;
       let autoplay = null;
 
-      // CRIA OS INDICADORES AUTOMATICAMENTE
       slides.forEach(function (_, index) {
         const dot = document.createElement("button");
-
         dot.type = "button";
         dot.className = "about-carousel-dot";
         dot.setAttribute("aria-label", "Ver foto " + (index + 1));
@@ -2262,28 +2288,22 @@
         dotsContainer.querySelectorAll(".about-carousel-dot")
       );
 
-      // MOSTRA A FOTO ESCOLHIDA
       function showSlide(index) {
         currentIndex = (index + slides.length) % slides.length;
 
         slides.forEach(function (slide, i) {
           const isActive = i === currentIndex;
-
           slide.classList.toggle("active", isActive);
           slide.setAttribute("aria-hidden", String(!isActive));
 
           if (isActive) {
             const image = slide.querySelector("img");
-
-            if (image) {
-              image.loading = "eager";
-            }
+            if (image) image.loading = "eager";
           }
         });
 
         dots.forEach(function (dot, i) {
           const isActive = i === currentIndex;
-
           dot.classList.toggle("active", isActive);
           dot.setAttribute("aria-current", isActive ? "true" : "false");
         });
@@ -2292,15 +2312,9 @@
           "Foto " + (currentIndex + 1) + " de " + slides.length;
       }
 
-      function nextSlide() {
-        showSlide(currentIndex + 1);
-      }
+      function nextSlide() { showSlide(currentIndex + 1); }
+      function previousSlide() { showSlide(currentIndex - 1); }
 
-      function previousSlide() {
-        showSlide(currentIndex - 1);
-      }
-
-      // TROCA AUTOMÁTICA A CADA 4 SEGUNDOS
       function stopAutoplay() {
         if (autoplay !== null) {
           clearInterval(autoplay);
@@ -2311,19 +2325,14 @@
       function startAutoplay() {
         stopAutoplay();
 
-        if (
-          !document.hidden &&
-          !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ) {
+        if (!document.hidden &&
+            !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           autoplay = setInterval(nextSlide, 4000);
         }
       }
 
-      function restartAutoplay() {
-        startAutoplay();
-      }
+      function restartAutoplay() { startAutoplay(); }
 
-      // SETAS
       nextButton.addEventListener("click", function () {
         nextSlide();
         restartAutoplay();
@@ -2334,22 +2343,16 @@
         restartAutoplay();
       });
 
-      // PAUSA QUANDO O MOUSE ESTÁ SOBRE A GALERIA
       carousel.addEventListener("mouseenter", stopAutoplay);
       carousel.addEventListener("mouseleave", startAutoplay);
       carousel.addEventListener("focusin", stopAutoplay);
       carousel.addEventListener("focusout", startAutoplay);
 
-      // PAUSA QUANDO A ABA NÃO ESTÁ VISÍVEL
       document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
+        if (document.hidden) stopAutoplay();
+        else startAutoplay();
       });
 
-      // SUPORTE A DESLIZAR A FOTO NO CELULAR
       let touchStartX = 0;
       let touchStartY = 0;
 
@@ -2361,25 +2364,18 @@
       carousel.addEventListener("touchend", function (event) {
         const touchEndX = event.changedTouches[0].screenX;
         const touchEndY = event.changedTouches[0].screenY;
-
         const differenceX = touchEndX - touchStartX;
         const differenceY = touchEndY - touchStartY;
 
-        if (
-          Math.abs(differenceX) > 50 &&
-          Math.abs(differenceX) > Math.abs(differenceY)
-        ) {
-          if (differenceX < 0) {
-            nextSlide();
-          } else {
-            previousSlide();
-          }
+        if (Math.abs(differenceX) > 50 &&
+            Math.abs(differenceX) > Math.abs(differenceY)) {
+          if (differenceX < 0) nextSlide();
+          else previousSlide();
 
           restartAutoplay();
         }
       }, { passive: true });
 
-      // INICIA NA PRIMEIRA FOTO
       showSlide(0);
       startAutoplay();
     })();
