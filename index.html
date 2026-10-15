@@ -3170,89 +3170,153 @@
       }
 
       // TROCA AUTOMÁTICA A CADA 4 SEGUNDOS
-      function stopAutoplay() {
-        if (autoplay !== null) {
-          clearInterval(autoplay);
-          autoplay = null;
-        }
-      }
+    
+function stopAutoplay() {
+  if (autoplay !== null) {
+    clearInterval(autoplay);
+    autoplay = null;
+  }
+}
 
-      function startAutoplay() {
-        stopAutoplay();
+function startAutoplay() {
+  stopAutoplay();
 
-        if (
-          !document.hidden &&
-          !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ) {
-          autoplay = setInterval(nextSlide, 4000);
-        }
-      }
+  if (
+    !document.hidden &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    slides.length > 1
+  ) {
+    autoplay = setInterval(nextSlide, 4000);
+  }
+}
 
-      function restartAutoplay() {
-        startAutoplay();
-      }
+function restartAutoplay() {
+  startAutoplay();
+}
 
-      // SETAS
-      nextButton.addEventListener("click", function () {
-        nextSlide();
-        restartAutoplay();
-      });
+// SETAS
+nextButton.addEventListener("click", function () {
+  nextSlide();
+  restartAutoplay();
+});
 
-      prevButton.addEventListener("click", function () {
-        previousSlide();
-        restartAutoplay();
-      });
+prevButton.addEventListener("click", function () {
+  previousSlide();
+  restartAutoplay();
+});
 
-      // PAUSA QUANDO O MOUSE ESTÁ SOBRE A GALERIA
-      carousel.addEventListener("mouseenter", stopAutoplay);
-      carousel.addEventListener("mouseleave", startAutoplay);
-      carousel.addEventListener("focusin", stopAutoplay);
-      carousel.addEventListener("focusout", startAutoplay);
+// PAUSA AO INTERAGIR COM A GALERIA
+carousel.addEventListener("mouseenter", stopAutoplay);
+carousel.addEventListener("mouseleave", startAutoplay);
+carousel.addEventListener("focusin", stopAutoplay);
+carousel.addEventListener("focusout", startAutoplay);
 
-      // PAUSA QUANDO A ABA NÃO ESTÁ VISÍVEL
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-          stopAutoplay();
-        } else {
-          startAutoplay();
-        }
-      });
+// PAUSA QUANDO A ABA NÃO ESTÁ VISÍVEL
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    stopAutoplay();
+  } else {
+    startAutoplay();
+  }
+});
 
-      // SUPORTE A DESLIZAR A FOTO NO CELULAR
-      let touchStartX = 0;
-      let touchStartY = 0;
+// DESLIZAR AS FOTOS NO CELULAR
+let touchStartX = 0;
+let touchStartY = 0;
 
-      carousel.addEventListener("touchstart", function (event) {
-        touchStartX = event.changedTouches[0].screenX;
-        touchStartY = event.changedTouches[0].screenY;
-      }, { passive: true });
+carousel.addEventListener("touchstart", function (event) {
+  touchStartX = event.changedTouches[0].screenX;
+  touchStartY = event.changedTouches[0].screenY;
+}, { passive: true });
 
-      carousel.addEventListener("touchend", function (event) {
-        const touchEndX = event.changedTouches[0].screenX;
-        const touchEndY = event.changedTouches[0].screenY;
+carousel.addEventListener("touchend", function (event) {
+  const touchEndX = event.changedTouches[0].screenX;
+  const touchEndY = event.changedTouches[0].screenY;
 
-        const differenceX = touchEndX - touchStartX;
-        const differenceY = touchEndY - touchStartY;
+  const differenceX = touchEndX - touchStartX;
+  const differenceY = touchEndY - touchStartY;
 
-        if (
-          Math.abs(differenceX) > 50 &&
-          Math.abs(differenceX) > Math.abs(differenceY)
-        ) {
-          if (differenceX < 0) {
-            nextSlide();
-          } else {
-            previousSlide();
-          }
+  if (
+    Math.abs(differenceX) > 50 &&
+    Math.abs(differenceX) > Math.abs(differenceY) &&
+    slides.length > 1
+  ) {
+    if (differenceX < 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
 
-          restartAutoplay();
-        }
-      }, { passive: true });
+    restartAutoplay();
+  }
+}, { passive: true });
 
-      // INICIA NA PRIMEIRA FOTO
-      showSlide(0);
-      startAutoplay();
-    })();
-  </script>
+// INICIA NA PRIMEIRA FOTO
+showSlide(0);
+startAutoplay();
+})();
+
+    
+/* CARROSSEL INDEPENDENTE DOS SEIS VEÍCULOS */
+document.querySelectorAll(".vehicle-carousel").forEach(function (carousel) {
+  const slides = Array.from(carousel.querySelectorAll("img"));
+  const prevButton = carousel.querySelector(".vehicle-carousel-arrow.prev");
+  const nextButton = carousel.querySelector(".vehicle-carousel-arrow.next");
+  const counter = carousel.querySelector(".vehicle-carousel-counter");
+
+  if (!slides.length || !prevButton || !nextButton || !counter) return;
+
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+
+    slides.forEach(function (slide, i) {
+      const active = i === currentIndex;
+      slide.classList.toggle("active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+    });
+
+    counter.textContent = (currentIndex + 1) + " / " + slides.length;
+
+    prevButton.style.display = slides.length > 1 ? "flex" : "none";
+    nextButton.style.display = slides.length > 1 ? "flex" : "none";
+    counter.style.display = slides.length > 1 ? "block" : "none";
+  }
+
+  prevButton.addEventListener("click", function () {
+    showSlide(currentIndex - 1);
+  });
+
+  nextButton.addEventListener("click", function () {
+    showSlide(currentIndex + 1);
+  });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  carousel.addEventListener("touchstart", function (event) {
+    touchStartX = event.changedTouches[0].screenX;
+    touchStartY = event.changedTouches[0].screenY;
+  }, { passive: true });
+
+  carousel.addEventListener("touchend", function (event) {
+    const differenceX = event.changedTouches[0].screenX - touchStartX;
+    const differenceY = event.changedTouches[0].screenY - touchStartY;
+
+    if (
+      slides.length > 1 &&
+      Math.abs(differenceX) > 50 &&
+      Math.abs(differenceX) > Math.abs(differenceY)
+    ) {
+      showSlide(currentIndex + (differenceX < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+
+  showSlide(0);
+});
+
+</script>
 
 </body>
 </html>
