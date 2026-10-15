@@ -863,6 +863,83 @@
       transition: transform .4s;
     }
 
+    /* CARROSSEL INDIVIDUAL DOS VEÍCULOS DE FRETAMENTO */
+.vehicle-photo.vehicle-carousel {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.vehicle-carousel img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-carousel img.active {
+  display: block;
+}
+
+.vehicle-photo.vehicle-carousel::after {
+  z-index: 1;
+}
+
+.vehicle-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.vehicle-carousel-arrow:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.vehicle-carousel-arrow.prev {
+  left: 12px;
+}
+
+.vehicle-carousel-arrow.next {
+  right: 12px;
+}
+
+.vehicle-carousel-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 3;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .vehicle-carousel-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+    
+
     .vehicle-photo.dual-photo {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -2072,127 +2149,145 @@
 
     <div class="fleet-grid">
 
-      <!-- CITROËN C4 -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo dual-photo c4-gallery">
-          <img src="./c4.jpg" alt="Citroën C4 Lounge" loading="lazy">
-          <img src="./c41.jpg" alt="Citroën C4 Lounge — segunda foto" loading="lazy">
-          <img src="./c42.jpg" alt="Citroën C4 Lounge — terceira foto" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Citroën C4 Lounge Exclusive</h3>
-          <p>Conforto para deslocamentos particulares, compromissos profissionais e viagens executivas, com amplo espaço para bagagens.</p>
-          <div class="vehicle-features">
-            <span>Bancos de couro</span>
-            <span>Ar-condicionado</span>
-            <span>Vidros com insulfilm</span>
-            <span>Maior porta-malas da categoria</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
-      <!-- CHEVROLET CRUZE -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo">
-          <img src="./cruze.jpg" alt="Chevrolet Cruze Sedan LTZ" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Chevrolet Cruze Sedan LTZ</h3>
-          <p>Transporte executivo para compromissos, traslados e trajetos planejados.</p>
-          <div class="vehicle-features">
-            <span>Bancos de couro</span>
-            <span>Ar-condicionado</span>
-            <span>Vidros com insulfilm</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
-      <!-- TOYOTA HILUX -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo dual-photo hilux-gallery">
-          <img src="./hilux.jpg" alt="Toyota Hilux — vista externa" loading="lazy">
-          <img src="./hilux2.jpg" alt="Toyota Hilux — segunda vista externa" loading="lazy">
-          <img src="./hilux3.jpg" alt="Toyota Hilux — interior" loading="lazy">
-          <img src="./hilux4.jpg" alt="Toyota Hilux — segunda foto interna" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Toyota Hilux</h3>
-          <p>Caminhonete com sete lugares para deslocamentos particulares, com conforto e versatilidade.</p>
-          <div class="vehicle-features">
-            <span>7 lugares</span>
-            <span>Bancos de couro</span>
-            <span>Ar-condicionado</span>
-            <span>Vidros com insulfilm</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
-      <!-- VANS EXECUTIVAS -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo dual-photo">
-          <img src="./vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
-          <img src="./vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Vans Executivas</h3>
-          <p>Transporte para grupos, empresas, eventos, excursões e deslocamentos programados.</p>
-          <div class="vehicle-features">
-            <span>15 passageiros</span>
-            <span>18 passageiros</span>
-            <span>Bancos maiores e reclináveis</span>
-            <span>Wi-Fi</span>
-            <span>Ar-condicionado</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
-      <!-- MICRO-ÔNIBUS EXECUTIVO -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo dual-photo">
-          <img src="./microonibus.png" alt="Micro-ônibus executivo da Viação LBL" loading="lazy">
-          <img src="./microonibus2.png" alt="Segundo micro-ônibus executivo da Viação LBL" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Micro-ônibus Executivo</h3>
-          <p>Uma solução confortável para grupos em passeios, eventos, viagens e fretamentos.</p>
-          <div class="vehicle-features">
-            <span>Até 32 passageiros</span>
-            <span>Bancos maiores e reclináveis</span>
-            <span>Wi-Fi</span>
-            <span>Ar-condicionado</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
-      <!-- ÔNIBUS G7 SEMI-LEITO -->
-      <article class="vehicle-card">
-        <div class="vehicle-photo dual-photo">
-          <img src="./onibusg7.jpeg" alt="Ônibus G7 semi-leito da Viação LBL" loading="lazy">
-          <img src="./onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
-        </div>
-        <div class="vehicle-body">
-          <h3>Ônibus G7 Semi-Leito</h3>
-          <p>Conforto e estrutura para viagens rodoviárias e fretamentos de grupos maiores.</p>
-          <div class="vehicle-features">
-            <span>47 lugares</span>
-            <span>Banheiro</span>
-            <span>Geladeiras</span>
-            <span>Vista panorâmica</span>
-            <span>Porta-bagagens amplos</span>
-            <span>Vários monitores</span>
-            <span>Wi-Fi</span>
-          </div>
-          <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
-        </div>
-      </article>
-
+<!-- CITROËN C4 -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./c4.jpg" alt="Citroën C4 Lounge" class="active" loading="lazy">
+    <img src="./c41.jpg" alt="Citroën C4 Lounge — segunda foto" loading="lazy">
+    <img src="./c42.jpg" alt="Citroën C4 Lounge — terceira foto" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior do C4">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto do C4">›</button>
+    <span class="vehicle-carousel-counter">1 / 3</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Citroën C4 Lounge Exclusive</h3>
+    <p>Conforto para deslocamentos particulares, compromissos profissionais e viagens executivas, com amplo espaço para bagagens.</p>
+    <div class="vehicle-features">
+      <span>Bancos de couro</span>
+      <span>Ar-condicionado</span>
+      <span>Vidros com insulfilm</span>
+      <span>Maior porta-malas da categoria</span>
     </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
 
+<!-- CHEVROLET CRUZE -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./cruze.jpg" alt="Chevrolet Cruze Sedan LTZ" class="active" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior do Cruze">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto do Cruze">›</button>
+    <span class="vehicle-carousel-counter">1 / 1</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Chevrolet Cruze Sedan LTZ</h3>
+    <p>Transporte executivo para compromissos, traslados e trajetos planejados.</p>
+    <div class="vehicle-features">
+      <span>Bancos de couro</span>
+      <span>Ar-condicionado</span>
+      <span>Vidros com insulfilm</span>
+    </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
+
+<!-- TOYOTA HILUX -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./hilux.jpg" alt="Toyota Hilux — vista externa" class="active" loading="lazy">
+    <img src="./hilux2.jpg" alt="Toyota Hilux — segunda vista externa" loading="lazy">
+    <img src="./hilux3.jpg" alt="Toyota Hilux — interior" loading="lazy">
+    <img src="./hilux4.jpg" alt="Toyota Hilux — segunda foto interna" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior da Hilux">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto da Hilux">›</button>
+    <span class="vehicle-carousel-counter">1 / 4</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Toyota Hilux</h3>
+    <p>Caminhonete com sete lugares para deslocamentos particulares, com conforto e versatilidade.</p>
+    <div class="vehicle-features">
+      <span>7 lugares</span>
+      <span>Bancos de couro</span>
+      <span>Ar-condicionado</span>
+      <span>Vidros com insulfilm</span>
+    </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
+
+<!-- VANS EXECUTIVAS -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./vanexecutiva.png" alt="Van executiva da Viação LBL" class="active" loading="lazy">
+    <img src="./vanexecutiva2.png" alt="Segunda foto da van executiva" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior da van">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto da van">›</button>
+    <span class="vehicle-carousel-counter">1 / 2</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Vans Executivas</h3>
+    <p>Transporte para grupos, empresas, eventos, excursões e deslocamentos programados.</p>
+    <div class="vehicle-features">
+      <span>15 passageiros</span>
+      <span>18 passageiros</span>
+      <span>Bancos maiores e reclináveis</span>
+      <span>Wi-Fi</span>
+      <span>Ar-condicionado</span>
+    </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
+
+<!-- MICRO-ÔNIBUS EXECUTIVO -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./microonibus.png" alt="Micro-ônibus executivo da Viação LBL" class="active" loading="lazy">
+    <img src="./microonibus2.png" alt="Segunda foto do micro-ônibus executivo" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior do micro-ônibus">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto do micro-ônibus">›</button>
+    <span class="vehicle-carousel-counter">1 / 2</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Micro-ônibus Executivo</h3>
+    <p>Uma solução confortável para grupos em passeios, eventos, viagens e fretamentos.</p>
+    <div class="vehicle-features">
+      <span>Até 32 passageiros</span>
+      <span>Bancos maiores e reclináveis</span>
+      <span>Wi-Fi</span>
+      <span>Ar-condicionado</span>
+    </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
+
+<!-- ÔNIBUS G7 SEMI-LEITO -->
+<article class="vehicle-card">
+  <div class="vehicle-photo vehicle-carousel">
+    <img src="./onibusg7.jpeg" alt="Ônibus G7 semi-leito da Viação LBL" class="active" loading="lazy">
+    <img src="./onibusg72.png" alt="Segunda foto do ônibus G7" loading="lazy">
+    <button class="vehicle-carousel-arrow prev" type="button" aria-label="Foto anterior do ônibus">‹</button>
+    <button class="vehicle-carousel-arrow next" type="button" aria-label="Próxima foto do ônibus">›</button>
+    <span class="vehicle-carousel-counter">1 / 2</span>
+  </div>
+  <div class="vehicle-body">
+    <h3>Ônibus G7 Semi-Leito</h3>
+    <p>Conforto e estrutura para viagens rodoviárias e fretamentos de grupos maiores.</p>
+    <div class="vehicle-features">
+      <span>47 lugares</span>
+      <span>Banheiro</span>
+      <span>Geladeiras</span>
+      <span>Vista panorâmica</span>
+      <span>Porta-bagagens amplos</span>
+      <span>Vários monitores</span>
+      <span>Wi-Fi</span>
+    </div>
+    <a href="#contato" class="btn btn-outline">Solicitar orçamento</a>
+  </div>
+</article>
+
+</div>
+    
     <!-- SEGURANÇA E CREDENCIAMENTOS -->
     <div class="fleet-credentials">
       <h3>Segurança, credenciamentos e viagens com mais tranquilidade</h3>
