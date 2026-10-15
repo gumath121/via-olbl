@@ -848,6 +848,10 @@
       gap: 3px;
     }
 
+    .vehicle-photo.c4-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .vehicle-card:hover .vehicle-photo img {
       transform: scale(1.04);
     }
@@ -1976,9 +1980,10 @@
         <div class="fleet-grid">
 
           <article class="vehicle-card">
-            <div class="vehicle-photo">
-              <img src="./citroen.jpg" alt="Citroën C4 Lounge Exclusive" loading="lazy">
-              <span class="vehicle-type">Executivo</span>
+            <div class="vehicle-photo dual-photo c4-gallery">
+              <img src="./c4.jpg" alt="Citroën C4 Lounge Exclusive" loading="lazy">
+              <img src="./c41.jpg" alt="Citroën C4 Lounge Exclusive — segunda foto" loading="lazy">
+              <img src="./c42.jpg" alt="Citroën C4 Lounge Exclusive — terceira foto" loading="lazy">
             </div>
             <div class="vehicle-body">
               <h3>Citroën C4 Lounge Exclusive</h3>
@@ -1988,14 +1993,13 @@
                 <span>Viagens particulares</span>
                 <span>Executivo</span>
               </div>
-              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
+              <a href="#contato" class="btn btn-outline">Solicitar Orçamento</a>
             </div>
           </article>
 
           <article class="vehicle-card">
             <div class="vehicle-photo">
               <img src="./cruze.jpg" alt="Chevrolet Cruze Sedan LTZ" loading="lazy">
-              <span class="vehicle-type">Executivo</span>
             </div>
             <div class="vehicle-body">
               <h3>Chevrolet Cruze Sedan LTZ</h3>
@@ -2005,24 +2009,24 @@
                 <span>Traslados</span>
                 <span>Viagens</span>
               </div>
-              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
+              <a href="#contato" class="btn btn-outline">Solicitar Orçamento</a>
             </div>
           </article>
 
           <article class="vehicle-card">
-            <div class="vehicle-photo">
-              <img src="./sw4.jpg" alt="Toyota SW4 SRX" loading="lazy">
-              <span class="vehicle-type">SUV</span>
+            <div class="vehicle-photo dual-photo">
+              <img src="./hilux.jpg" alt="Toyota Hilux" loading="lazy">
+              <img src="./hilux2.jpg" alt="Toyota Hilux — segunda foto" loading="lazy">
             </div>
             <div class="vehicle-body">
-              <h3>Toyota SW4 SRX</h3>
+              <h3>Toyota Hilux</h3>
               <p>Uma alternativa para quem procura espaço e versatilidade em deslocamentos particulares.</p>
               <div class="vehicle-features">
-                <span>Até 7 lugares</span>
                 <span>Espaço</span>
+                <span>Conforto</span>
                 <span>Viagens</span>
               </div>
-              <a href="#contato" class="btn btn-outline">Consultar disponibilidade</a>
+              <a href="#contato" class="btn btn-outline">Solicitar Orçamento</a>
             </div>
           </article>
 
@@ -2030,7 +2034,6 @@
             <div class="vehicle-photo dual-photo">
               <img src="./vanexecutiva.png" alt="Van executiva da Viação LBL" loading="lazy">
               <img src="./vanexecutiva2.png" alt="Segunda van executiva da Viação LBL" loading="lazy">
-              <span class="vehicle-type">Grupos</span>
             </div>
             <div class="vehicle-body">
               <h3>Vans Executivas</h3>
@@ -2048,7 +2051,6 @@
             <div class="vehicle-photo dual-photo">
               <img src="./microonibus.png" alt="Micro-ônibus da Viação LBL" loading="lazy">
               <img src="./microonibus2.png" alt="Segundo micro-ônibus da Viação LBL" loading="lazy">
-              <span class="vehicle-type">Fretamento</span>
             </div>
             <div class="vehicle-body">
               <h3>Micro-ônibus</h3>
@@ -2066,7 +2068,6 @@
             <div class="vehicle-photo dual-photo">
               <img src="./onibusg7.jpeg" alt="Ônibus G7 da Viação LBL" loading="lazy">
               <img src="./onibusg72.png" alt="Segundo ônibus G7 da Viação LBL" loading="lazy">
-              <span class="vehicle-type">Rodoviário</span>
             </div>
             <div class="vehicle-body">
               <h3>Ônibus G7 LD Semileito</h3>
@@ -2294,7 +2295,7 @@
             <h2>Mais que transporte, <span>uma experiência.</span></h2>
 
             <p>
-              A Viação LBL e Leandro &amp; Recanto Transportes Executivos
+              A Viação LBL Transportes Executivos
               oferece soluções de transporte para quem valoriza organização,
               conforto e atendimento diferenciado.
             </p>
@@ -2632,7 +2633,7 @@
           </a>
 
           <p>
-            Viação LBL e Leandro &amp; Recanto Transportes Executivos.
+            Viação LBL Transportes Executivos.
             Soluções de transporte para viagens, fretamentos,
             turismo e compromissos profissionais.
           </p>
