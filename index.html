@@ -2142,6 +2142,57 @@
         animation-duration: .01ms !important;
       }
     }
+    
+/* LOGOS DOS CERTIFICADOS E CREDENCIAMENTOS */
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.credential-item {
+  min-height: 125px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.credential-item img {
+  display: block;
+  width: 100%;
+  max-width: 145px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.credential-item span {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .credential-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .credential-item {
+    min-height: 115px;
+    padding: 12px 8px;
+  }
+
+  .credential-item img {
+    max-width: 125px;
+    height: 58px;
+  }
+}
+
   </style>
 </head>
 
