@@ -494,7 +494,7 @@
     .agency-visual::after {
       width: 275px;
       height: 275px;
-      border-style: dashed;
+      border-: dashed;
       opacity: .6;
     }
 
@@ -847,22 +847,96 @@
       border-color: rgba(198,40,54,.8);
       box-shadow: 0 14px 40px rgba(0,0,0,.3);
     }
+.vehicle-photo {
+  height: 210px;
+  background: #1b1b1b;
+  position: relative;
+  overflow: hidden;
+}
 
-    .vehicle-photo {
-      height: 210px;
-      background: #1b1b1b;
-      position: relative;
-      overflow: hidden;
-    }
+.vehicle-photo img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: cover;
+  transition: transform .4s;
+}
 
-    .vehicle-photo img {
-      width: 100%;
-      height: 100%;
-      min-width: 0;
-      object-fit: cover;
-      transition: transform .4s;
-    }
+/* CARROSSEL DOS VEÍCULOS */
+.vehicle-photo.vehicle-carousel {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
 
+.vehicle-carousel img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-carousel img.active {
+  display: block;
+}
+
+.vehicle-photo.vehicle-carousel::after {
+  z-index: 1;
+}
+
+/* SETAS LATERAIS */
+.vehicle-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.vehicle-carousel-arrow:hover {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.vehicle-carousel-arrow.prev {
+  left: 12px;
+}
+
+.vehicle-carousel-arrow.next {
+  right: 12px;
+}
+
+/* CONTADOR DAS FOTOS */
+.vehicle-carousel-counter {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 3;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .vehicle-carousel-arrow {
+    width: 38px;
+    height: 38px;
+  }
+}
     /* CARROSSEL INDIVIDUAL DOS VEÍCULOS DE FRETAMENTO */
 .vehicle-photo.vehicle-carousel {
   display: block;
