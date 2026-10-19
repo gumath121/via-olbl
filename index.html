@@ -2042,6 +2042,26 @@ display: none;
   }
 }
 
+/* AJUSTE DO GRID DA FROTA — preservar os cards e carrosséis */
+.fleet-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 23px;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .fleet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .fleet-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
   </style>
 </head>
 
@@ -2261,7 +2281,6 @@ display: none;
 
 </div>
     
-   ```html
 <!-- SEGURANÇA E CREDENCIAMENTOS -->
 <div class="fleet-credentials">
   <h3>Segurança, credenciamentos e viagens com mais tranquilidade</h3>
