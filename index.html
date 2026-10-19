@@ -2902,7 +2902,7 @@ display: none;
     </div>
   </footer>
 
-
+  <script>
     // ANO AUTOMÁTICO NO RODAPÉ
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
@@ -2918,7 +2918,7 @@ display: none;
       menuToggle.textContent = "☰";
       document.body.classList.remove("menu-open");
     }
-
+    
     menuToggle.addEventListener("click", function () {
       const isOpen = mainNav.classList.toggle("open");
 
