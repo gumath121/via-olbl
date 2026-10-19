@@ -832,7 +832,16 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 23px;
   width: 100%;
+  max-width: 100%;
   align-items: stretch;
+  box-sizing: border-box;
+}
+
+.fleet-grid > .vehicle-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 900px) {
@@ -843,10 +852,9 @@
 
 @media (max-width: 560px) {
   .fleet-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
-
 
     .vehicle-card {
       min-width: 0;
