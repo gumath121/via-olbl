@@ -1883,10 +1883,13 @@ display: none;
         grid-template-columns: 1fr;
       }
 
-      .fleet-grid,
-      .tour-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .fleet-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tour-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
       .vehicle-photo {
         height: 225px;
